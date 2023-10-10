@@ -1,7 +1,7 @@
 import * as s from './style';
-type BadgeType = {
+type BadgeTypes = {
   title: string;
 };
-export const Badge = ({ title }: BadgeType) => {
+export const Badge = ({ title }: BadgeTypes) => {
   return <s.BadgeWrapper>{title}</s.BadgeWrapper>;
 };
