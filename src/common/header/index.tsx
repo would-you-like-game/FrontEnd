@@ -23,8 +23,8 @@ export const Header = () => {
             <span>Welcome to My page!</span>
           </div>
           <div>
-            <Button title="Logout" color="gray1" />
-            <Button title="Edit Profile" color="black" />
+            <Button title="Logout" color="black1" borderColor="white" />
+            <Button title="Edit Profile" color="black2" borderColor="black2" />
           </div>
         </s.RightSide>
       </s.HeaderWrapper>

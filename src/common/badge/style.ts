@@ -7,6 +7,6 @@ export const BadgeWrapper = styled.div`
   border-radius: 2px;
   background-color: ${Theme.colors.gray2};
   font-size: ${Theme.fontSizes.body4};
-  color: ${Theme.colors.black};
+  color: ${Theme.colors.black1};
   font-weight: ${Theme.fontWeights.bold};
 `;

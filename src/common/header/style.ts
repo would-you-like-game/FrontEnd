@@ -2,7 +2,7 @@ import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
 
 export const HeaderWrapper = styled.div`
-  background-color: ${Theme.colors.black};
+  background-color: ${Theme.colors.black1};
   height: 200px;
   display: flex;
   flex-direction: row;
