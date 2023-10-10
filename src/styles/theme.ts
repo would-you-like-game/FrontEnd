@@ -6,7 +6,8 @@ export const Theme: ThemeType = {
     gray1: '#D9D9D9',
     gray2: '#A4A4A4',
     gray3: '#6E6E6E',
-    black: '#151515',
+    black1: '#272727',
+    black2: '#151515',
   },
   fontSizes: {
     h1: '48px',
