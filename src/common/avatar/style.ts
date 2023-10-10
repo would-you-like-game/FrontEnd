@@ -2,7 +2,7 @@ import { Theme } from '@/styles/theme';
 import { SerializedStyles, css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { AvatarTypes } from '.';
-type AvatarWrapperProps = {
+type AvatarProps = {
   size: keyof typeof sizeStyles;
 };
 const sizeStyles: Record<AvatarTypes['size'], SerializedStyles> = {
@@ -19,7 +19,7 @@ const sizeStyles: Record<AvatarTypes['size'], SerializedStyles> = {
     height: 150px;
   `,
 };
-export const AvatarWrapper = styled.div<AvatarWrapperProps>`
+export const Avatar = styled.div<AvatarProps>`
   width: 100px;
   height: 100px;
   border-radius: 100%;
