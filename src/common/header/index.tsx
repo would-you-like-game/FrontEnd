@@ -13,7 +13,7 @@ export const Header = () => {
           <span>나와 게임에 조인할래?</span>
         </s.LeftSide>
         <s.RightSide>
-          <Avatar />
+          <Avatar size="medium" />
           <div>
             <p>John Doe</p>
             <div>

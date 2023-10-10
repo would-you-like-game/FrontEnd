@@ -1,5 +1,7 @@
 import * as s from './style';
-
-export const Avatar = () => {
-  return <s.AvatarWrapper></s.AvatarWrapper>;
+export type AvatarTypes = {
+  size: 'small' | 'medium' | 'large';
+};
+export const Avatar = ({ size }: AvatarTypes) => {
+  return <s.AvatarWrapper size={size}></s.AvatarWrapper>;
 };
