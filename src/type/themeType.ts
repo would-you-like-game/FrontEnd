@@ -14,6 +14,7 @@ export type FontSizesType = {
   body2: string;
   body3: string;
   body4: string;
+  body5: string;
 };
 
 export type FontWeightsType = {
