@@ -1,5 +1,12 @@
+import { LoginTop, LoginMiddle, LoginBottom } from './view';
+import * as s from './style';
+
 export const Login = () => {
   return (
-    <div>index</div>
-  )
-}
+    <s.Login>
+      <LoginTop />
+      <LoginMiddle />
+      <LoginBottom />
+    </s.Login>
+  );
+};
