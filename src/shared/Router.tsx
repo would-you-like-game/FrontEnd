@@ -9,8 +9,8 @@ export const Router = () => {
         <Route element={<Header />}>
           <Route path="/" element={<Main />} />
         </Route>
-        <Route element={<Login />} />
-        <Route element={<Signup />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );
