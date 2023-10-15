@@ -2,12 +2,12 @@ import { Theme } from '@/styles/theme';
 import { ColorsType } from '@/type/themeType';
 import styled from '@emotion/styled';
 
-type ButtonWrapperProps = {
+type ButtonProps = {
   color: keyof ColorsType;
   borderColor: keyof ColorsType;
 };
 
-export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+export const Button = styled.button<ButtonProps>`
   background-color: ${(props) => Theme.colors[props.color]};
   display: flex;
   justify-content: center;

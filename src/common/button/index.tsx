@@ -9,8 +9,8 @@ type ButtonTypes = {
 
 export const Button = ({ title, color = 'black2', borderColor = 'black2' }: ButtonTypes) => {
   return (
-    <s.ButtonWrapper color={color} borderColor={borderColor}>
+    <s.Button color={color} borderColor={borderColor}>
       {title}
-    </s.ButtonWrapper>
+    </s.Button>
   );
 };

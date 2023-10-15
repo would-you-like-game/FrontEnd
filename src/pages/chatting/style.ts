@@ -1,15 +1,10 @@
 import styled from '@emotion/styled';
-
-export const Main = styled.div`
+export const Chatting = styled.div`
   display: flex;
   align-items: center;
-  & > div:first-child {
-    border: 1px solid red;
+  gap: 20px;
+  & div {
   }
-`;
-
-export const Top = styled.div`
-  display: flex;
 `;
 
 export const Workspace = styled.div`
