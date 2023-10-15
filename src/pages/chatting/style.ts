@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-export const Mypage = styled.div`
+export const Chatting = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
