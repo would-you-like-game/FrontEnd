@@ -1,19 +1,25 @@
-import { Header } from '@/common';
-import { Chatting, Login, Main, Mypage, Signup } from '@/pages';
+import React, { Suspense } from 'react';
+import { Header } from '@/common/header';
+import { Chatting, Main, Mypage } from '@/pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+const Login = React.lazy(() => import('../pages/login/index').then(({ Login }) => ({ default: Login })));
+const Signup = React.lazy(() => import('../pages/signup/index').then(({ Signup }) => ({ default: Signup })));
 
 export const Router = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Header />}>
-          <Route path="/main" element={<Main />} />
-          <Route path="/mypage" element={<Mypage />} />
-          <Route path="/chatting" element={<Chatting />} />
-        </Route>
-        <Route element={<Login />} />
-        <Route element={<Signup />} />
-      </Routes>
+      <Suspense>
+        <Routes>
+          <Route element={<Header />}>
+            <Route path="/" element={<Main />} />
+            <Route path="/mypage" element={<Mypage />} />
+            <Route path="/chatting" element={<Chatting />} />
+          </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 };

@@ -16,6 +16,7 @@ export const Theme: ThemeType = {
     body2: '24px',
     body3: '20px',
     body4: '16px',
+    body5: '14px',
   },
   fontWeights: {
     bold: '700',
