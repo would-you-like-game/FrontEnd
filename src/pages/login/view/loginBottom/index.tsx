@@ -14,5 +14,3 @@ export const LoginBottom = () => {
     </s.LoginBottom>
   );
 };
-
-export default LoginBottom;

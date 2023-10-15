@@ -13,5 +13,3 @@ export const LoginMiddle = () => {
     </s.LoginMiddle>
   );
 };
-
-export default LoginMiddle;
