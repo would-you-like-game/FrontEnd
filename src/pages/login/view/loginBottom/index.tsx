@@ -7,7 +7,7 @@ export const LoginBottom = () => {
 
   return (
     <s.LoginBottom>
-      <s.Text onClick={() => navigateTo('/Singup')}>회원가입</s.Text>
+      <s.Text onClick={() => navigateTo('/signup')}>회원가입</s.Text>
       <s.ButtonZone>
         <Button children="Login" color="black2" size="medium" />
       </s.ButtonZone>
