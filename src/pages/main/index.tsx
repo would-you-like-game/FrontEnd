@@ -1,15 +1,11 @@
-import { Sidebar } from '@/common';
 import * as s from './style';
-import { Top } from './view/top';
+import { Bottom, Top } from './view';
 
 export const Main = () => {
   return (
     <s.Main>
-      <s.Top>
-        <Top />
-      </s.Top>
-      <Sidebar />
-      <s.Workspace></s.Workspace>
+      <Top />
+      <Bottom />
     </s.Main>
   );
 };

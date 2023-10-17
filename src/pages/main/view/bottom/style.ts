@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Main = styled.div`
+export const Bottom = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `;

@@ -17,8 +17,12 @@ export const Header = () => {
             <p>John Doe</p>
           </div>
           <div>
-            <Button title="Edit Profile" color="black2" borderColor="black2" />
-            <Button title="Logout" color="black1" borderColor="white" />
+            <Button
+              children="Edit Profile"
+              color="black2"
+              borderColor="black2"
+            />
+            <Button children="Logout" color="black1" borderColor="white" />
           </div>
         </s.RightSide>
       </s.Header>

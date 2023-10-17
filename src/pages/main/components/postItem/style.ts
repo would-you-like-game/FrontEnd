@@ -6,6 +6,8 @@ export const PostItem = styled.div`
   flex-direction: row;
   gap: 20px;
   padding: 10px;
+  min-width: 200px;
+  height: fit-content;
   border: 1px solid ${Theme.colors.gray1};
   & > div:first-child {
     height: 120px;
@@ -18,7 +20,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 400px;
+  width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

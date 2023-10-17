@@ -1,16 +1,20 @@
 import * as s from './style';
 
 type ButtonTypes = {
-  title: string;
+  children: string;
   size?: 'small' | 'medium';
   color?: 'gray1' | 'black1' | 'black2';
   borderColor?: 'black2' | 'white';
 };
 
-export const Button = ({ title, color = 'black2', borderColor = 'black2' }: ButtonTypes) => {
+export const Button = ({
+  children,
+  color = 'black2',
+  borderColor = 'black2',
+}: ButtonTypes) => {
   return (
     <s.Button color={color} borderColor={borderColor}>
-      {title}
+      {children}
     </s.Button>
   );
 };

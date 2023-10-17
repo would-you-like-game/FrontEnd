@@ -7,7 +7,13 @@ type PostItemStyle = {
   totalNubmer: number;
 };
 
-export const PostItem = ({ title, nickname, temperature, totalNubmer, currnetNubmer }: PostItemStyle) => {
+export const PostItem = ({
+  title,
+  nickname,
+  temperature,
+  totalNubmer,
+  currnetNubmer,
+}: PostItemStyle) => {
   return (
     <s.PostItem>
       <div></div>
@@ -22,5 +28,3 @@ export const PostItem = ({ title, nickname, temperature, totalNubmer, currnetNub
     </s.PostItem>
   );
 };
-
-// 아이콘 만들어야 함
