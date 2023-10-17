@@ -1,7 +1,10 @@
+import { SerachInput } from '../../components/serachInput';
+import * as s from './style';
+
 export const Top = () => {
   return (
-    <div>
-      <input type="text" />
-    </div>
+    <s.Top>
+      <SerachInput />
+    </s.Top>
   );
 };
