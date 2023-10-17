@@ -7,7 +7,7 @@ export const Sidebar = () => {
     <>
       <s.Sidebar>
         <SidebarItem title="내가 쓴 게시물" />
-        <SidebarItem title="내가 쓴 게시물2" />
+        <SidebarItem title="내가 참가한 게시물" />
       </s.Sidebar>
       <Outlet />
     </>

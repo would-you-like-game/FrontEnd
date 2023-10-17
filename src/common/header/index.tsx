@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import * as s from './style';
 import { Button } from '../button';
 import { Avatar } from '../avatar';
+import { Hearts } from '@/assets/icon';
 
 export const Header = () => {
   return (
@@ -13,16 +14,17 @@ export const Header = () => {
         </s.LeftSide>
         <s.RightSide>
           <Avatar size="medium" />
-          <div>
+          <s.ProfileBox>
             <p>John Doe</p>
-          </div>
+            <Hearts color="red" className="" />
+          </s.ProfileBox>
           <div>
-            <Button
-              children="Edit Profile"
-              color="black2"
-              borderColor="black2"
-            />
-            <Button children="Logout" color="black1" borderColor="white" />
+            <Button color="black2" borderColor="black2">
+              Edit Profile
+            </Button>
+            <Button color="black1" borderColor="white">
+              Logout
+            </Button>
           </div>
         </s.RightSide>
       </s.Header>

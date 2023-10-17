@@ -5,7 +5,6 @@ type SidebarItemType = {
 export const SidebarItem = ({ title }: SidebarItemType) => {
   return (
     <s.SidebarItem>
-      📱
       <span>{title}</span>
     </s.SidebarItem>
   );
