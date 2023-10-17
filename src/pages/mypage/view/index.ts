@@ -1,1 +1,1 @@
-export * from './postList';
+export * from './content';

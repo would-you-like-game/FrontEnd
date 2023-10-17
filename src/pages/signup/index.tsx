@@ -6,7 +6,7 @@ export const Signup = () => {
     <s.Signup>
       <h1>GameCrew</h1>
       <SignupContent />
-      <Button title="Sign Up" color="black1" />
+      <Button color="black1">Sign Up</Button>
     </s.Signup>
   );
 };
