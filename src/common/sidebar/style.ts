@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
-  width: 220px;
+  min-width: 220px;
   height: 100vh;
   padding: 20px;
   gap: 40px;

@@ -9,7 +9,9 @@ export const LoginBottom = () => {
     <s.LoginBottom>
       <s.Text onClick={() => navigateTo('/signup')}>회원가입</s.Text>
       <s.ButtonZone>
-        <Button children="Login" color="black2" size="medium" />
+        <Button color="black2" size="medium">
+          Login
+        </Button>
       </s.ButtonZone>
     </s.LoginBottom>
   );
