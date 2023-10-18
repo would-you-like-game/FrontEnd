@@ -1,9 +1,9 @@
 import * as s from './style';
 
 type ButtonTypes = {
-  children: string;
+  children: React.ReactNode;
   size?: 'small' | 'medium';
-  color?: 'gray1' | 'black1' | 'black2';
+  color?: 'white' | 'gray1' | 'black1' | 'black2';
   borderColor?: 'black2' | 'white';
 };
 
