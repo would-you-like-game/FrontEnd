@@ -17,7 +17,8 @@ export const Button = styled.button<ButtonProps>`
   height: 48px;
   border-radius: 8px;
   border: 1px solid ${(props) => Theme.colors[props.borderColor]};
-  color: ${Theme.colors.white};
+  color: ${(props) =>
+    props.color === 'white' ? Theme.colors.black2 : Theme.colors.white};
   font-size: ${Theme.fontSizes.body4};
   font-weight: ${Theme.fontWeights.semiBold};
 `;

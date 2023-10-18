@@ -10,6 +10,10 @@ const Signup = React.lazy(() =>
   import('../pages/signup/index').then(({ Signup }) => ({ default: Signup }))
 );
 
+const Detail = React.lazy(() =>
+  import('../pages/detail/index').then(({ Detail }) => ({ default: Detail }))
+);
+
 export const Router = () => {
   return (
     <BrowserRouter>
@@ -19,6 +23,7 @@ export const Router = () => {
             <Route path="/" element={<Main />} />
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/chatting" element={<Chatting />} />
+            <Route path="/detail/:postId" element={<Detail />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
