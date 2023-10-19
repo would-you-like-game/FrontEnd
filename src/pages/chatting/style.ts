@@ -2,14 +2,12 @@ import styled from '@emotion/styled';
 export const Chatting = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
-  & div {
-  }
+  height: 85%;
 `;
-
-export const Workspace = styled.div`
+export const Bottom = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 `;

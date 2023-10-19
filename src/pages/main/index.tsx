@@ -1,11 +1,11 @@
 import * as s from './style';
-import { Bottom, Top } from './view';
+import { MainBottom, MainTop } from './view';
 
 export const Main = () => {
   return (
     <s.Main>
-      <Top />
-      <Bottom />
+      <MainTop />
+      <MainBottom />
     </s.Main>
   );
 };

@@ -1,17 +1,17 @@
-import * as s from './style';
 import { Sidebar } from '@/common';
+import * as s from './style';
+import { MainContent } from '..';
 import { ContentArea } from '@/styles/GlobalStyle';
-import { PostList } from './components';
 
-export const Mypage = () => {
+export const MainBottom = () => {
   return (
-    <s.Mypage>
+    <s.MainBottom>
       <Sidebar />
       <ContentArea>
         <s.Right>
-          <PostList />
+          <MainContent />
         </s.Right>
       </ContentArea>
-    </s.Mypage>
+    </s.MainBottom>
   );
 };

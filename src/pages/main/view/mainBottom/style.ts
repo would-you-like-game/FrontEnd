@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-export const Mypage = styled.div`
+
+export const MainBottom = styled.div`
   display: flex;
   flex-direction: row;
-  height: 85%;
+  height: 100%;
 `;
-
 export const Right = styled.div`
   display: flex;
   justify-content: center;

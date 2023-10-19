@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { Header } from '@/common/header';
-import { Chatting, Main, Mypage } from '@/pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Login = React.lazy(() =>
@@ -14,6 +13,26 @@ const Detail = React.lazy(() =>
 );
 const Edit = React.lazy(() =>
   import('../pages/edit/index').then(({ Edit }) => ({ default: Edit }))
+);
+
+const Mypage = React.lazy(() =>
+  import('../pages/mypage/index').then(({ Mypage }) => ({ default: Mypage }))
+);
+
+const Chatting = React.lazy(() =>
+  import('../pages/chatting/index').then(({ Chatting }) => ({
+    default: Chatting,
+  }))
+);
+
+const Main = React.lazy(() =>
+  import('../pages/main/index').then(({ Main }) => ({ default: Main }))
+);
+
+const NotFound = React.lazy(() =>
+  import('../pages/notFound/index').then(({ NotFound }) => ({
+    default: NotFound,
+  }))
 );
 
 export const Router = () => {
@@ -30,6 +49,7 @@ export const Router = () => {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
