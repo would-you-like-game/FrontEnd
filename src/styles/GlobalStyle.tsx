@@ -1,4 +1,5 @@
 import emotionReset from 'emotion-reset';
+import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 export const reset = css`
@@ -21,10 +22,18 @@ export const reset = css`
   h2 {
     font-family: 'Orbitron', sans-serif;
   }
-
-  body {
+  #root {
+    height: 100%;
+  }
+  body,
+  html {
     font-family: 'TheJamsil5Bold';
+    height: 100%;
     width: 1280px;
     margin: 0 auto;
   }
+`;
+
+export const ContentArea = styled.div`
+  padding: 50px;
 `;

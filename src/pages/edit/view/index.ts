@@ -1,2 +1,2 @@
-export * from './left';
-export * from './right';
+export * from './editleft';
+export * from './editright';

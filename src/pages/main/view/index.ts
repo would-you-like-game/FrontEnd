@@ -1,3 +1,3 @@
-export * from './bottom';
-export * from './top';
-export * from './content';
+export * from './mainBottom';
+export * from './mainTop';
+export * from './mainContent';
