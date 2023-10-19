@@ -24,5 +24,7 @@ export const reset = css`
 
   body {
     font-family: 'TheJamsil5Bold';
+    width: 1280px;
+    margin: 0 auto;
   }
 `;
