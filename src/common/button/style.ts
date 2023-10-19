@@ -21,4 +21,8 @@ export const Button = styled.button<ButtonProps>`
     props.color === 'white' ? Theme.colors.black2 : Theme.colors.white};
   font-size: ${Theme.fontSizes.body4};
   font-weight: ${Theme.fontWeights.semiBold};
+  cursor: pointer;
+  &:active {
+    background-color: red;
+  }
 `;

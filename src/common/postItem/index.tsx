@@ -1,7 +1,9 @@
+import { useNavigateTo } from '@/hooks/useNavigate';
 import * as s from './style';
 type PostItemStyle = {
   title: string;
   nickname: string;
+  postId: number;
   temperature: number;
   currnetNubmer: number;
   totalNubmer: number;
@@ -10,12 +12,15 @@ type PostItemStyle = {
 export const PostItem = ({
   title,
   nickname,
+  postId,
   temperature,
   totalNubmer,
   currnetNubmer,
 }: PostItemStyle) => {
+  const navigateTo = useNavigateTo();
+
   return (
-    <s.PostItem>
+    <s.PostItem onClick={() => navigateTo(`/detail/${postId}`)}>
       <div></div>
       <s.Content>
         <span>{nickname}</span>

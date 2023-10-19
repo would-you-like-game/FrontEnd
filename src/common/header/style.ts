@@ -1,9 +1,16 @@
+import { Hearts } from '@/assets/icon';
 import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
 
+export const HeartIcon = styled(Hearts)`
+  width: 12px;
+  height: auto;
+`;
+
 export const Header = styled.div`
   background-color: ${Theme.colors.black1};
-  height: 170px;
+  min-height: 140px;
+  height: 15%;
   display: flex;
   margin: 0 auto;
   flex-direction: row;
@@ -21,9 +28,11 @@ export const LeftSide = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  & h2 {
+  .mainTitle {
     font-size: ${Theme.fontSizes.h1};
     font-weight: ${Theme.fontWeights.bold};
+    color: ${Theme.colors.white};
+    text-decoration: none;
   }
   & span {
     font-size: ${Theme.fontSizes.body2};
@@ -41,24 +50,31 @@ export const RightSide = styled.div`
   align-items: center;
   gap: 20px;
 
-  & div {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-  }
-
   & span {
     font-size: ${Theme.fontSizes.body4};
     font-weight: ${Theme.fontWeights.normal};
   }
 `;
-export const ProfileBox = styled.div`
+
+export const LoginOption = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+`;
+export const UserData = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: auto;
+  gap: 15px;
 
-  & p {
+  .nickname {
     font-size: ${Theme.fontSizes.body2};
     font-weight: ${Theme.fontWeights.bold};
+  }
+
+  .temp {
+    font-size: ${Theme.fontSizes.body4};
+    font-weight: ${Theme.fontWeights.normal};
+    color: ${Theme.colors.gray2};
   }
 `;
