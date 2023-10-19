@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { AvatarTypes } from '.';
 type AvatarProps = {
   size: keyof typeof sizeStyles;
+  src: string;
 };
 const sizeStyles: Record<AvatarTypes['size'], SerializedStyles> = {
   small: css`
@@ -19,7 +20,7 @@ const sizeStyles: Record<AvatarTypes['size'], SerializedStyles> = {
     height: 150px;
   `,
 };
-export const Avatar = styled.div<AvatarProps>`
+export const Avatar = styled.img<AvatarProps>`
   width: 100px;
   height: 100px;
   border-radius: 100%;

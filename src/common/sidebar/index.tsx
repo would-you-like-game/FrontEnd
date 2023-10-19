@@ -1,13 +1,32 @@
 import { Outlet } from 'react-router-dom';
 import * as s from './style';
-import { SidebarItem } from '../sidebarItem';
+import { SidebarItem } from '..';
+import { useGetPathname } from '@/hooks/useGetPathname';
+import { sidebarData } from '@/utils/sidebarData';
+import { useState } from 'react';
 
 export const Sidebar = () => {
+  const pathname = useGetPathname();
+  const [checked, setChecked] = useState(0);
+  const post = sidebarData(pathname);
+  const onClickHandler = (index: number) => {
+    setChecked(index);
+  };
   return (
     <>
       <s.Sidebar>
-        <SidebarItem title="내가 쓴 게시물" />
-        <SidebarItem title="내가 참가한 게시물" />
+        {post &&
+          post.map((item, index) => (
+            <SidebarItem
+              key={`${item.title}${index}`}
+              index={index}
+              title={item.title}
+              iconColor={item.iconColor}
+              iconType={item.iconType}
+              onClickHandler={onClickHandler}
+              checked={checked === index ? true : false}
+            />
+          ))}
       </s.Sidebar>
       <Outlet />
     </>
