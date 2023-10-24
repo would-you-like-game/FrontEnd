@@ -2,8 +2,8 @@ import { Outlet } from 'react-router-dom';
 import * as s from './style';
 import { SidebarItem } from '..';
 import { useGetPathname } from '@/hooks/useGetPathname';
-import { sidebarData } from '@/utils/sidebarData';
 import { useState } from 'react';
+import { sidebarData } from '@/utils/sidebarData';
 
 export const Sidebar = () => {
   const pathname = useGetPathname();
@@ -21,8 +21,7 @@ export const Sidebar = () => {
               key={`${item.title}${index}`}
               index={index}
               title={item.title}
-              iconColor={item.iconColor}
-              iconType={item.iconType}
+              type={item.type}
               onClickHandler={onClickHandler}
               checked={checked === index ? true : false}
             />

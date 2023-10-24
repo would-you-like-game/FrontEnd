@@ -1,17 +1,9 @@
 import { useState } from 'react';
 import * as s from './style';
+import { sidebarData } from '@/utils/sidebarData';
 
 const Select = () => {
-  const OPTIONS = [
-    '어드벤처',
-    '아케이드',
-    '스포츠',
-    'MMORPG',
-    '롤플레잉',
-    '시뮬레이션',
-    '퍼즐',
-    'MOBA',
-  ];
+  const OPTIONS = sidebarData('edit');
   const [isToggle, setIsToggle] = useState(false);
   const [option, setOption] = useState('게임종류');
 
@@ -32,8 +24,9 @@ const Select = () => {
           {OPTIONS.map(
             (item, index) =>
               index !== 0 && (
-                <li onClick={() => onClickOption(item)} key={index}>
-                  {item}
+                <li onClick={() => onClickOption(item.title)} key={index}>
+                  <s.Icon size={12} type={item.type} />
+                  {item.title}
                 </li>
               )
           )}
