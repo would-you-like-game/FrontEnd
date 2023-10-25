@@ -1,3 +1,4 @@
+import { ContentArea } from '@/styles/GlobalStyle';
 import * as s from './style';
 import { LeftBottom, Top } from './view';
 import RightBottom from './view/rightBottom';
@@ -42,20 +43,22 @@ export const Detail = () => {
 
   return (
     <s.Detail>
-      <Top postUser={post.postUser} title={post.title} />
-      <s.Bottom>
-        <LeftBottom createdAt={post.createdAt} content={post.content} />
-        <RightBottom
-          postUser={post.postUser}
-          category={post.category}
-          number={post.number}
-          nickname={post.nickname}
-          profileImg={post.profileImg}
-          userId={post.userId}
-          temperature={post.temperature}
-          participant={post.participant}
-        />
-      </s.Bottom>
+      <ContentArea>
+        <Top postUser={post.postUser} title={post.title} />
+        <s.Bottom>
+          <LeftBottom createdAt={post.createdAt} content={post.content} />
+          <RightBottom
+            postUser={post.postUser}
+            category={post.category}
+            number={post.number}
+            nickname={post.nickname}
+            profileImg={post.profileImg}
+            userId={post.userId}
+            temperature={post.temperature}
+            participant={post.participant}
+          />
+        </s.Bottom>
+      </ContentArea>
     </s.Detail>
   );
 };

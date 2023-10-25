@@ -13,6 +13,7 @@ export const sidebarData = (data: string) => {
 
 interface DataProps extends IconTypeProps {
   title: string;
+  category?: string;
 }
 
 const mypageData: DataProps[] = [
@@ -29,15 +30,16 @@ const chattingData: DataProps[] = [
 // 이거 채팅은 좀 달랐던거 같은데 어떻게 했더라???
 
 const mainData: DataProps[] = [
-  { title: '액션', type: 'action' },
-  { title: '스포츠', type: 'sport' },
-  { title: '슈팅', type: 'shooting' },
-  { title: '레이싱', type: 'racing' },
-  { title: 'RPG', type: 'rpg' },
-  { title: '퍼즐', type: 'puzzle' },
-  { title: '시뮬레이션', type: 'simulation' },
-  { title: '공포', type: 'horror' },
-  { title: '퍼즐', type: 'puzzle' },
-  { title: '어드밴쳐', type: 'adventure' },
-  { title: '기타', type: 'etcetera' },
+  { category: 'all', title: '전체', type: 'emptyGame' },
+  { category: 'action', title: '액션', type: 'action' },
+  { category: 'sport', title: '스포츠', type: 'sport' },
+  { category: 'shooting', title: '슈팅', type: 'shooting' },
+  { category: 'racing', title: '레이싱', type: 'racing' },
+  { category: 'rpg', title: 'RPG', type: 'rpg' },
+  { category: 'puzzle', title: '퍼즐', type: 'puzzle' },
+  { category: 'simulation', title: '시뮬레이션', type: 'simulation' },
+  { category: 'horror', title: '공포', type: 'horror' },
+  { category: 'puzzle', title: '퍼즐', type: 'puzzle' },
+  { category: 'adventure', title: '어드밴쳐', type: 'adventure' },
+  { category: 'etcetera', title: '기타', type: 'etcetera' },
 ];

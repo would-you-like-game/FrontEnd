@@ -31,4 +31,3 @@ export const Sidebar = () => {
     </>
   );
 };
-// map 함수로 여러개 뿌릴 예정임

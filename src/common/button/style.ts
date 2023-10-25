@@ -22,7 +22,4 @@ export const Button = styled.button<ButtonProps>`
   font-size: ${Theme.fontSizes.body4};
   font-weight: ${Theme.fontWeights.semiBold};
   cursor: pointer;
-  &:active {
-    background-color: red;
-  }
 `;
