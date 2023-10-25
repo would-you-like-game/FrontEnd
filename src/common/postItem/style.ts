@@ -10,7 +10,11 @@ export const PostItem = styled.div`
   height: fit-content;
   cursor: pointer;
   border: 1px solid ${Theme.colors.gray1};
-  & > div:first-child {
+  &:hover {
+    box-shadow: 10px 10px 10px ${Theme.colors.gray1};
+  }
+
+  img {
     height: 120px;
     width: 120px;
     background-color: ${Theme.colors.gray1};
@@ -22,20 +26,24 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
-  & > span {
+
+  span {
     display: flex;
     justify-content: end;
     color: ${Theme.colors.gray2};
   }
-  & > p {
+  p {
     font-size: ${Theme.fontSizes.body3};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 80%;
   }
-  & > div {
+  div {
     display: flex;
     gap: 10px;
+    span {
+      color: ${Theme.colors.black2};
+    }
   }
 `;

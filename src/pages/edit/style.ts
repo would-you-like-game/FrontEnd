@@ -5,8 +5,7 @@ export const Edit = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: calc(100vh - 170px);
-  padding: 30px;
+  height: 85%;
 
   input {
     font-size: ${Theme.fontSizes.h2};
@@ -29,4 +28,5 @@ export const Edit = styled.form`
 export const Bottom = styled.div`
   flex: 1;
   display: flex;
+  height: 100%;
 `;
