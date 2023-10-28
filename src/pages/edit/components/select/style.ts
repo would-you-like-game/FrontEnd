@@ -1,3 +1,4 @@
+import { Icons } from '@/assets/icon';
 import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
 
@@ -24,4 +25,8 @@ export const OptionList = styled.div`
     padding: 10px;
     border: 1px solid ${Theme.colors.gray1};
   }
+`;
+export const Icon = styled(Icons)`
+  width: ${(props) => props.size}px;
+  height: auto;
 `;

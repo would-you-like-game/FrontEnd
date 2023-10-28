@@ -21,7 +21,7 @@ export const PostItem = ({
 
   return (
     <s.PostItem onClick={() => navigateTo(`/detail/${postId}`)}>
-      <div></div>
+      <img alt="post-item" />
       <s.Content>
         <span>{nickname}</span>
         <p>{title}</p>

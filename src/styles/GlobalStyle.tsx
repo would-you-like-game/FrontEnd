@@ -4,10 +4,10 @@ import { css } from '@emotion/react';
 
 export const reset = css`
   @font-face {
-    font-family: 'TheJamsil5Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2')
-      format('woff2');
-    font-weight: 700;
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+      format('woff');
+    font-weight: normal;
     font-style: normal;
   }
 
@@ -27,13 +27,21 @@ export const reset = css`
   }
   body,
   html {
-    font-family: 'TheJamsil5Bold';
+    font-family: 'GmarketSansMedium';
     height: 100%;
     width: 1280px;
     margin: 0 auto;
+    box-sizing: border-box;
+    input {
+      font-family: 'GmarketSansMedium';
+    }
+    button {
+      font-family: 'GmarketSansMedium';
+    }
   }
 `;
 
 export const ContentArea = styled.div`
   padding: 50px;
+  height: 100%;
 `;

@@ -1,24 +1,25 @@
+import { IconTypeProps } from '@/assets/icon';
 import * as s from './style';
-type SidebarItemType = {
+
+interface SidebarItemType extends IconTypeProps {
   index: number;
   title: string;
-  iconType: 'Human' | 'People' | 'EmptyGame' | 'FilledGame';
-  iconColor: string;
   onClickHandler: (index: number) => void;
   checked: boolean;
-};
+}
 export const SidebarItem = ({
   index,
   title,
-  iconType,
-  iconColor,
+  type,
   checked,
   onClickHandler,
 }: SidebarItemType) => {
   return (
-    <s.SidebarItem onClick={() => onClickHandler(index)}>
-      <div className="iconSize"></div>
-      <s.Icon type={iconType} color={checked ? 'red' : iconColor} size={28} />
+    <s.SidebarItem
+      color={checked ? 'gray2' : 'none'}
+      onClick={() => onClickHandler(index)}
+    >
+      <s.Icon type={type} size={20} />
       <span>{title}</span>
     </s.SidebarItem>
   );
