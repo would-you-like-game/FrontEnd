@@ -5,6 +5,7 @@ type ButtonTypes = {
   size?: 'small' | 'medium';
   color?: 'white' | 'gray1' | 'black1' | 'black2';
   borderColor?: 'black2' | 'white';
+  type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
 };
 
