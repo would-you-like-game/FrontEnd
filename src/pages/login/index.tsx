@@ -1,12 +1,13 @@
-import { LoginTop, LoginMiddle, LoginBottom } from './view';
 import * as s from './style';
+import LoginContent from './view/loginContent';
 
 export const Login = () => {
   return (
-    <s.Login>
-      <LoginTop />
-      <LoginMiddle />
-      <LoginBottom />
-    </s.Login>
+    <>
+      <s.Login>
+        <h1>GameCrew</h1>
+        <LoginContent />
+      </s.Login>
+    </>
   );
 };
