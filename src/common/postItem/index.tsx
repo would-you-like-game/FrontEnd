@@ -3,7 +3,7 @@ import * as s from './style';
 type PostItemStyle = {
   title: string;
   nickname: string;
-  postId: number;
+  postId?: number;
   temperature: number;
   currnetNubmer: number;
   totalNubmer: number;

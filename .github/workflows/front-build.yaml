@@ -17,6 +17,8 @@ jobs:
 
       - name: Build
         run: yarn build
+        env:
+          VITE_URL: ${{ secrets.VITE_URL }}
 
       - name: S3 Deploy
         run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --acl bucket-owner-full-control
