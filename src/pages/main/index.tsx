@@ -1,9 +1,11 @@
 import * as s from './style';
+import { MainBottom, MainTop } from './view';
 
 export const Main = () => {
   return (
-    <>
-      <s.A>Main</s.A>
-    </>
+    <s.Main>
+      <MainTop />
+      <MainBottom />
+    </s.Main>
   );
 };

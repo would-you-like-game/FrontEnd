@@ -3,7 +3,8 @@ export type ColorsType = {
   gray1: string;
   gray2: string;
   gray3: string;
-  black: string;
+  black1: string;
+  black2: string;
 };
 
 export type FontSizesType = {
@@ -13,6 +14,7 @@ export type FontSizesType = {
   body2: string;
   body3: string;
   body4: string;
+  body5: string;
 };
 
 export type FontWeightsType = {

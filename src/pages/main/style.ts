@@ -1,6 +1,7 @@
-import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
 
-export const A = styled.div`
-  color: ${Theme.colors.gray1};
+export const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 85%;
 `;
