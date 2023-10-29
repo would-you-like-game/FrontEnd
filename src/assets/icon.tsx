@@ -1,5 +1,5 @@
 export type IconTypeProps = {
-  type:
+  type?:
     | 'human'
     | 'people'
     | 'emptyGame'

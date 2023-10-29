@@ -1,6 +1,5 @@
-import Input from '@/common/input';
 import * as s from './style';
-import { Button } from '@/common';
+import { Button, Input } from '@/common';
 import Select from '../../components/select';
 
 export const Right = () => {
