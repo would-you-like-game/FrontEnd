@@ -1,12 +1,7 @@
 import { userProps } from '@/type/type';
 import * as s from './style';
 
-export const PostUser = ({
-  userId,
-  profileImg,
-  nickname,
-  temperature,
-}: userProps) => {
+export const PostUser = ({ profileImg, nickname, temperature }: userProps) => {
   return (
     <s.PostUser>
       <img src={profileImg} alt="profile Img" />

@@ -1,4 +1,4 @@
-import { PostItem } from '@/pages/main/components/postItem';
+import { PostItem } from '@/common';
 import * as s from './style';
 
 export const Content = () => {
