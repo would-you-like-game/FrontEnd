@@ -1,3 +1,3 @@
 export * from './mainBottom';
 export * from './mainTop';
-export * from './mainContent';
+export * from './mainPostList';
