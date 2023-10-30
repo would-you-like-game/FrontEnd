@@ -1,7 +1,16 @@
-import { PostItem } from '@/common/postItem';
+// import useSWR from 'swr';
+// import { useRecoilValue } from 'recoil';
+// import { sidebarState } from '../../../../recoil/sidebarState';
+import { PostItem } from '@/common';
 import * as s from './style';
 
-export const MainContent = () => {
+export const MainPostList = () => {
+  // const page = 1;
+  // const category = useRecoilValue(sidebarState);
+  // const { data } = useSWR(
+  //   category ? `/post?page=${page}&category=${category}` : null
+  // );
+
   return (
     <s.MainPostList>
       <PostItem

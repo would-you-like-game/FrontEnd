@@ -1,7 +1,7 @@
-import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
+import { Theme } from '../../../../styles/theme';
 
-export const SerachInput = styled.div`
+export const SerachInput = styled.input`
   display: flex;
   justify-content: space-between;
   width: 100%;

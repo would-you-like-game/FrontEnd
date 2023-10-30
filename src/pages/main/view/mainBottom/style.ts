@@ -5,9 +5,13 @@ export const MainBottom = styled.div`
   flex-direction: row;
   height: 100%;
 `;
-export const Right = styled.div`
+export const Top = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Bottom = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 `;

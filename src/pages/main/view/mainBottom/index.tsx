@@ -1,6 +1,6 @@
-import { Sidebar } from '@/common';
 import * as s from './style';
-import { MainContent } from '..';
+import { MainPostList } from '..';
+import { Pagination, Sidebar } from '@/common';
 import { ContentArea } from '@/styles/GlobalStyle';
 
 export const MainBottom = () => {
@@ -8,9 +8,12 @@ export const MainBottom = () => {
     <s.MainBottom>
       <Sidebar />
       <ContentArea>
-        <s.Right>
-          <MainContent />
-        </s.Right>
+        <s.Top>
+          <MainPostList />
+        </s.Top>
+        <s.Bottom>
+          <Pagination />
+        </s.Bottom>
       </ContentArea>
     </s.MainBottom>
   );

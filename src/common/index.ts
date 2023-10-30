@@ -5,3 +5,6 @@ export * from './input';
 export * from './postItem';
 export * from './sidebar';
 export * from './sidebarItem';
+export * from './modal';
+export * from './portal';
+export * from './pagination';

@@ -1,6 +1,6 @@
-import { Theme } from '@/styles/theme';
-import { ColorsType } from '@/type/themeType';
 import styled from '@emotion/styled';
+import { ColorsType } from '@/type/themeType';
+import { Theme } from '@/styles/theme';
 
 type ButtonProps = {
   color: keyof ColorsType;

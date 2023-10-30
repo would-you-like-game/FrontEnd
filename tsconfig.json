@@ -9,9 +9,15 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@layout/*": ["src/layout/*"],
-      "@pages/*": ["src/pages/*"]
+      "@aips/*": ["src/aips/*"],
+      "@common/*": ["src/common/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@recoil/*": ["src/recoil/*"],
+      "@shared/*": ["src/shared/*"],
+      "@styles/*": ["src/styles/*"],
+      "@type/*": ["src/type/*"],
+      "@util/*": ["src/util/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",

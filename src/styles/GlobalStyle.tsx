@@ -1,6 +1,7 @@
 import emotionReset from 'emotion-reset';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { ContenetType } from '@/type/themeType';
 
 export const reset = css`
   @font-face {
@@ -29,7 +30,7 @@ export const reset = css`
   html {
     font-family: 'GmarketSansMedium';
     height: 100%;
-    width: 1280px;
+    width: 1920px;
     margin: 0 auto;
     box-sizing: border-box;
     input {
@@ -41,7 +42,7 @@ export const reset = css`
   }
 `;
 
-export const ContentArea = styled.div`
+export const ContentArea = styled.div<ContenetType>`
   padding: 50px;
   height: 100%;
 `;
