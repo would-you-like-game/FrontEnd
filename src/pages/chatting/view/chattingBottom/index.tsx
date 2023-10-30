@@ -1,6 +1,6 @@
 import { Button } from '@/common';
-import { ChattingInput } from '../../components';
 import * as s from './style';
+import { ChattingInput } from '../../components';
 
 export const ChattingBottom = () => {
   return (

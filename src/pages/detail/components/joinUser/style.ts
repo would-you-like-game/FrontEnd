@@ -10,6 +10,7 @@ export const JoinUser = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  cursor: pointer;
 
   img {
     width: 85px;

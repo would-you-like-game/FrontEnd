@@ -1,3 +1,4 @@
+import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
 
 export const RightBottom = styled.div`
@@ -21,5 +22,8 @@ export const JoinUserZone = styled.div`
 
 export const JoinUser = styled.div`
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 40px;
 `;
