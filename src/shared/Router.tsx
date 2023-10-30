@@ -45,7 +45,7 @@ export const Router = () => {
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/chatting" element={<Chatting />} />
             <Route path="/detail/:postId" element={<Detail />} />
-            <Route path="/edit/:postId" element={<Edit />} />
+            <Route path="/edit" element={<Edit />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
