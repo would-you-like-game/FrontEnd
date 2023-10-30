@@ -10,8 +10,9 @@ export const PostItem = styled.div`
   height: fit-content;
   cursor: pointer;
   border: 1px solid ${Theme.colors.gray1};
+  box-shadow: 10px 10px 10px ${Theme.colors.gray1};
   &:hover {
-    box-shadow: 10px 10px 10px ${Theme.colors.gray1};
+    box-shadow: none;
   }
 
   img {
