@@ -1,10 +1,9 @@
 import { Icons } from '@/assets/icon';
 import { Theme } from '@/styles/theme';
-import { ColorsType } from '@/type/themeType';
 import styled from '@emotion/styled';
 
 type SidebarItemProps = {
-  color: keyof ColorsType | 'none';
+  checked: boolean;
 };
 
 export const SidebarItem = styled.div<SidebarItemProps>`
@@ -14,8 +13,9 @@ export const SidebarItem = styled.div<SidebarItemProps>`
   padding: 20px;
   display: flex;
   align-items: center;
-  background-color: ${(props) =>
-    props.color !== 'none' && Theme.colors[props.color]};
+  cursor: pointer;
+  background-color: ${(props) => (props.checked ? Theme.colors.gray2 : 'none')};
+  font-weight: ${(props) => (props.checked ? '700' : '500')};
   &:hover {
     background-color: ${Theme.colors.gray2};
   }

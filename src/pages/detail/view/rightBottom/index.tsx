@@ -1,7 +1,7 @@
-import { Button } from '@/common';
-import { JoinUser, PostUser } from '../../components';
+import { Button, Modal, Portal } from '@/common';
 import * as s from './style';
-
+import { JoinUser, PostUser } from '../../components';
+import { useModal } from '@/hooks/useModal';
 type rightBottomProps = {
   postUser: boolean;
   category: string;
@@ -27,6 +27,7 @@ const RightBottom = ({
   temperature,
   participant,
 }: rightBottomProps) => {
+  const { onModal, onClickHandler } = useModal();
   return (
     <s.RightBottom>
       <PostUser
@@ -39,20 +40,25 @@ const RightBottom = ({
         <Button color="white">인원수: {number}</Button>
         <Button>게임종류: {category}</Button>
       </s.GameOptions>
-
       <s.JoinUserZone>
-        <s.JoinUser>
-          {participant.map((el) => (
-            <JoinUser
-              key={el.userId}
-              nickname={el.nickname}
-              profileImg={el.profileImg}
-              temperature={el.temperature}
-            />
-          ))}
-        </s.JoinUser>
-        {postUser && <Button>참가</Button>}
+        {postUser && <Button onClick={onClickHandler}>참가</Button>}
       </s.JoinUserZone>
+      {onModal && (
+        <Portal nodeName="joinUserModal">
+          <Modal width={1000} heigth={1000} onClose={onClickHandler}>
+            <s.JoinUser>
+              {participant.map((el) => (
+                <JoinUser
+                  key={el.userId}
+                  nickname={el.nickname}
+                  profileImg={el.profileImg}
+                  temperature={el.temperature}
+                />
+              ))}
+            </s.JoinUser>
+          </Modal>
+        </Portal>
+      )}
     </s.RightBottom>
   );
 };

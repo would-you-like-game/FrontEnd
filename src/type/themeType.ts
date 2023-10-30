@@ -28,3 +28,7 @@ export interface ThemeType {
   fontSizes: FontSizesType;
   fontWeights: FontWeightsType;
 }
+
+export interface ContenetType {
+  page?: 'main';
+}

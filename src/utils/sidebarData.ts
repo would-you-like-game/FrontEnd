@@ -13,19 +13,19 @@ export const sidebarData = (data: string) => {
 
 interface DataProps extends IconTypeProps {
   title: string;
-  category?: string;
+  category: string;
 }
 
 const mypageData: DataProps[] = [
-  { title: '내가 쓴 게시물', type: 'emptyGame' },
-  { title: '내가 참가한 게시물', type: 'filledGame' },
+  { category: 'all', title: '내가 쓴 게시물', type: 'emptyGame' },
+  { category: 'all', title: '내가 참가한 게시물', type: 'filledGame' },
 ];
 
 const chattingData: DataProps[] = [
-  { title: '채팅', type: 'emptyGame' },
-  { title: '얘는 ', type: 'emptyGame' },
-  { title: '사이드 바를', type: 'emptyGame' },
-  { title: '어케하더라?', type: 'filledGame' },
+  { category: 'all', title: '채팅', type: 'emptyGame' },
+  { category: 'all', title: '얘는 ', type: 'emptyGame' },
+  { category: 'all', title: '사이드 바를', type: 'emptyGame' },
+  { category: 'all', title: '어케하더라?', type: 'filledGame' },
 ];
 // 이거 채팅은 좀 달랐던거 같은데 어떻게 했더라???
 

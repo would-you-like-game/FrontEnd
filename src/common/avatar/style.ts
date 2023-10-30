@@ -1,7 +1,7 @@
-import { Theme } from '@/styles/theme';
 import { SerializedStyles, css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { AvatarTypes } from '.';
+import { Theme } from '@/styles/theme';
 type AvatarProps = {
   size: keyof typeof sizeStyles;
   src: string;
