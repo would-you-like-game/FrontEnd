@@ -8,6 +8,5 @@ export const Mypage = styled.div`
 export const Right = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100%;
 `;
