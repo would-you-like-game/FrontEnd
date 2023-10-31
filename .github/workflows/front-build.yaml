@@ -14,16 +14,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
 
-      - name: Generate Environment Variables File
-        env:
-          VITE_URL: ${{ secrets.VITE_URL }}
-        run: |
-          echo $VITE_URL
-
       - name: Install Dependencies
         run: yarn
 
       - name: Build
+        env:
+          VITE_URL: ${{ secrets.VITE_URL }}
         run: yarn build
 
       - name: Configure AWS credentials
