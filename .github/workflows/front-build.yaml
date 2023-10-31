@@ -16,9 +16,7 @@ jobs:
 
       - name: Generate Environment Variables File
         run: |
-          echo "VITE_URL=$VITE_URL" >> .env
-        env:
-          VITE_URL: ${{ secrets.VITE_URL }}
+          echo ${{ secrets.VITE_URL }} >> .env
 
       - name: Install Dependencies
         run: yarn
