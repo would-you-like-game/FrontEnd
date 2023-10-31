@@ -8,7 +8,7 @@ export const onSubmitLogin = async (data) => {
       console.log('token', token, response.data.token)
       localStorage.setItem('token', token);
       console.log('token', token, response.data.toke)
-      window.location.replace('/');
+      // window.location.replace('/');
     }
   } catch (error) {
     console.error('error', error);
