@@ -15,8 +15,10 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Generate Environment Variables File
+        env:
+          VITE_URL: ${{ secrets.VITE_URL }}
         run: |
-          echo "VITE_URL=${{ secrets.VITE_URL }}" >> .env
+          echo $VITE_URL
 
       - name: Install Dependencies
         run: yarn
