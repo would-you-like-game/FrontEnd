@@ -1,4 +1,3 @@
-import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
 
 export const RightBottom = styled.div`
