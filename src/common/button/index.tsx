@@ -3,7 +3,7 @@ import * as s from './style';
 type ButtonTypes = {
   children: React.ReactNode;
   size?: 'small' | 'medium';
-  color?: 'white' | 'gray1' | 'black1' | 'black2';
+  color?: 'white' | 'gray1' | 'black1' | 'black2' | 'none';
   borderColor?: 'black2' | 'white';
   type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;

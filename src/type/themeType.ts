@@ -5,6 +5,7 @@ export type ColorsType = {
   gray3: string;
   black1: string;
   black2: string;
+  none: string;
 };
 
 export type FontSizesType = {
