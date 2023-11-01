@@ -21,6 +21,12 @@ export const SignupContent = () => {
     formState: { errors },
   } = useForm();
 
+  const permission =
+    emailAuth &&
+    nicknameAuth &&
+    watch('password') &&
+    watch('passwordVerification');
+
   const handleSignupSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (emailAuth && nicknameAuth) {
@@ -82,12 +88,7 @@ export const SignupContent = () => {
       <s.Validate>
         <Input
           type="text"
-          register={register('nickname', {
-            pattern: {
-              value: /^.{1,8}$/,
-              message: '닉네임은 1자 이상 8자 이하여야 합니다',
-            },
-          })}
+          register={register('nickname', { required: true })}
           placeholder="닉네임을 입력해주세요"
           readOnly={nicknameAuth}
         >
@@ -103,14 +104,11 @@ export const SignupContent = () => {
           </Button>
         )}
       </s.Validate>
-      {errors.nickname && typeof errors.nickname.message === 'string' && (
-        <s.ValidateTexT>{errors.nickname.message}</s.ValidateTexT>
-      )}
       <Input
         type="password"
         register={register('password', {
           pattern: {
-            value: /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^<>&*]).{8,20}$/i,
+            value: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^<>&*]).{8,20}$/,
             message:
               '비밀번호는 8자 이상 20자 미만 대소문자, 숫자, 특수문자(!@#$%"<>"^&*)를 각 1개 이상씩 사용해야합니다',
           },
@@ -125,6 +123,7 @@ export const SignupContent = () => {
       <Input
         type="password"
         register={register('passwordVerification', {
+          required: '비밀번호 확인은 필수 입력입니다',
           validate: {
             matchPassword: (value: string) => {
               return (
@@ -142,7 +141,12 @@ export const SignupContent = () => {
           <s.ValidateTexT>{errors.passwordVerification.message}</s.ValidateTexT>
         )}
       <s.ButtonContainer>
-        <Button color="black2" size="medium" type="submit">
+        <Button
+          color={permission ? 'black2' : 'none'}
+          borderColor={permission ? 'black2' : 'white'}
+          size="medium"
+          type="submit"
+        >
           Signup
         </Button>
       </s.ButtonContainer>
