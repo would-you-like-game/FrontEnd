@@ -30,7 +30,7 @@ export const reset = css`
   html {
     font-family: 'GmarketSansMedium';
     height: 100%;
-    width: 1920px;
+    width: 1280px;
     margin: 0 auto;
     box-sizing: border-box;
     input {
