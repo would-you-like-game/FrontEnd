@@ -1,7 +1,7 @@
 import { Theme } from '@/styles/theme';
 import styled from '@emotion/styled';
 
-export const Signup = styled.form`
+export const Signup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

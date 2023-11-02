@@ -8,7 +8,8 @@ type ButtonProps = {
 };
 
 export const Button = styled.button<ButtonProps>`
-  background-color: ${(props) => Theme.colors[props.color]};
+  background-color: ${(props) =>
+    props.color !== 'none' ? Theme.colors[props.color] : Theme.colors.gray1};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +19,12 @@ export const Button = styled.button<ButtonProps>`
   border-radius: 8px;
   border: 1px solid ${(props) => Theme.colors[props.borderColor]};
   color: ${(props) =>
-    props.color === 'white' ? Theme.colors.black2 : Theme.colors.white};
+    props.color === 'white'
+      ? Theme.colors.black2
+      : props.color !== 'none'
+      ? Theme.colors.white
+      : Theme.colors.gray2};
   font-size: ${Theme.fontSizes.body4};
   font-weight: ${Theme.fontWeights.semiBold};
-  cursor: pointer;
+  cursor: ${(props) => (props.color !== 'none' ? 'point' : 'default')};
 `;
