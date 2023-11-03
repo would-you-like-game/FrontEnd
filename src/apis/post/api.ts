@@ -6,7 +6,7 @@ export const onSbumitPost = async (data: RequestPostType) => {
   try {
     const response = await api.post('post', data);
     if (response.status === 200) {
-      console.log(response.data);
+      window.history.back();
     }
   } catch (error) {
     console.error('error', error);

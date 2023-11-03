@@ -11,7 +11,6 @@ export const Edit = () => {
   const [editData, onChange] = useRecoilInput(editDataState);
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(editData);
     onSbumitPost(editData);
   };
 
