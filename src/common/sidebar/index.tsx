@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import * as s from './style';
 import { Button, SidebarItem } from '..';
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { useNavigateTo } from '@/hooks/useNavigate';
 import { useGetPathname } from '@/hooks/useGetPathname';
@@ -12,14 +12,13 @@ export const Sidebar = () => {
   const pathname = useGetPathname();
   const navigateTo = useNavigateTo();
   const post = sidebarData(pathname);
-  const [checked, setChecked] = useState(0);
-  const setSidebarState = useSetRecoilState(sidebarState);
+  const setCategory = useSetRecoilState(sidebarState);
   const onClickCategoryHandler = useCallback(
-    (index: number, category: string) => {
-      setChecked(index);
-      setSidebarState(category);
+    (category: string) => {
+      setCategory(category);
+      navigateTo(`/${category}?page=1`);
     },
-    [setSidebarState]
+    [setCategory]
   );
   const onClickEditButtonHanlder = useCallback(() => {
     const token = localStorage.getItem('token');
@@ -38,15 +37,13 @@ export const Sidebar = () => {
                 key={`${item.title}${index}`}
                 title={item.title}
                 type={item.type}
-                onClickHandler={() =>
-                  onClickCategoryHandler(index, item.category)
-                }
-                checked={checked === index ? true : false}
+                onClickHandler={() => onClickCategoryHandler(item.category)}
+                checked={pathname === item.category}
               />
             ))}
         </s.CategoryBox>
         <s.ButtonBox>
-          {!pathname && (
+          {!(pathname === 'chatting') && (
             <Button onClick={onClickEditButtonHanlder}>게시글 작성</Button>
           )}
         </s.ButtonBox>
