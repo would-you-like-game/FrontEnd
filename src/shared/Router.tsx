@@ -42,6 +42,7 @@ export const Router = () => {
         <Routes>
           <Route element={<Header />}>
             <Route path="/" element={<Main />} />
+            <Route path="/:category" element={<Main />} />
             <Route path="/mypage" element={<Mypage />} />
             <Route path="/chatting" element={<Chatting />} />
             <Route path="/detail/:postId" element={<Detail />} />
