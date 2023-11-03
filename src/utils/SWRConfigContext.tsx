@@ -7,8 +7,12 @@ interface SWRConfigContextProps {
 
 const SWRConfigContext = ({ children }: SWRConfigContextProps) => {
   const fetcher = async (url: string) => {
-    const response = await api(url);
-    return response;
+    try {
+      const response = await api(url).then((response) => response.data);
+      return response;
+    } catch (error) {
+      console.error('error', error);
+    }
   };
   return (
     <SWRConfig

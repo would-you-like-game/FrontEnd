@@ -44,5 +44,6 @@ export const reset = css`
 
 export const ContentArea = styled.div<ContenetType>`
   padding: 50px;
+  width: 100%;
   height: 100%;
 `;

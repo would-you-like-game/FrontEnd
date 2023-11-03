@@ -10,3 +10,8 @@ export const editDataState = atom<postProps>({
     totalNumber: '',
   },
 });
+
+export const pageState = atom<number>({
+  key: 'pageState',
+  default: 1,
+});
