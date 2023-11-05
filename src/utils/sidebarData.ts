@@ -22,10 +22,10 @@ const mypageData: DataProps[] = [
 ];
 
 const chattingData: DataProps[] = [
-  { category: 'all', title: '채팅', type: 'emptyGame' },
-  { category: 'all', title: '얘는 ', type: 'emptyGame' },
-  { category: 'all', title: '사이드 바를', type: 'emptyGame' },
-  { category: 'all', title: '어케하더라?', type: 'filledGame' },
+  { category: 'user1', title: 'user1', type: 'emptyGame' },
+  { category: 'user2', title: 'user2 ', type: 'emptyGame' },
+  { category: 'user3', title: 'user3', type: 'emptyGame' },
+  { category: 'user4', title: 'user4', type: 'filledGame' },
 ];
 // 이거 채팅은 좀 달랐던거 같은데 어떻게 했더라???
 
@@ -39,7 +39,6 @@ const mainData: DataProps[] = [
   { category: 'puzzle', title: '퍼즐', type: 'puzzle' },
   { category: 'simulation', title: '시뮬레이션', type: 'simulation' },
   { category: 'horror', title: '공포', type: 'horror' },
-  { category: 'puzzle', title: '퍼즐', type: 'puzzle' },
   { category: 'adventure', title: '어드밴쳐', type: 'adventure' },
   { category: 'etcetera', title: '기타', type: 'etcetera' },
 ];
