@@ -3,10 +3,9 @@ import * as s from './style';
 import { Button, SidebarItem } from '..';
 import { useCallback } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { useNavigateTo } from '@/hooks/useNavigate';
-import { useGetPathname } from '@/hooks/useGetPathname';
 import { sidebarData } from '@/utils/sidebarData';
 import { sidebarState } from '@/recoil/sidebarState';
+import { useGetPathname, useNavigateTo } from '@/hooks';
 
 export const Sidebar = () => {
   const pathname = useGetPathname();
@@ -16,7 +15,8 @@ export const Sidebar = () => {
   const onClickCategoryHandler = useCallback(
     (category: string) => {
       setCategory(category);
-      navigateTo(`/${category}?page=1`);
+      if (pathname === 'chatting') navigateTo(`/chatting/${category}`);
+      else navigateTo(`/${category}?page=1`);
     },
     [setCategory]
   );
