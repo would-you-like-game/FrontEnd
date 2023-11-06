@@ -25,6 +25,14 @@ const Chatting = React.lazy(() =>
   }))
 );
 
+const ChattingContent = React.lazy(() =>
+  import('../pages/chatting/view/chattingContent/index').then(
+    ({ ChattingContent }) => ({
+      default: ChattingContent,
+    })
+  )
+);
+
 const Main = React.lazy(() =>
   import('../pages/main/index').then(({ Main }) => ({ default: Main }))
 );
@@ -44,7 +52,9 @@ export const Router = () => {
             <Route path="/" element={<Main />} />
             <Route path="/:category" element={<Main />} />
             <Route path="/mypage" element={<Mypage />} />
-            <Route path="/chatting" element={<Chatting />} />
+            <Route path="/chatting" element={<Chatting />}>
+              <Route path="/chatting/:userId" element={<ChattingContent />} />
+            </Route>
             <Route path="/detail/:postId" element={<Detail />} />
             <Route path="/edit" element={<Edit />} />
           </Route>

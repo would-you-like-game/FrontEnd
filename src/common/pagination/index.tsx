@@ -2,7 +2,7 @@ import * as s from './style';
 import { creatPageArray } from '@/utils/creatPageArray';
 import { useRecoilState } from 'recoil';
 import { pageState } from '@/recoil/postState';
-import { useNavigateTo } from '@/hooks/useNavigate';
+import { useNavigateTo } from '@/hooks/useNavigateTo';
 type PaginationProps = {
   totalPages: number;
   category: string;

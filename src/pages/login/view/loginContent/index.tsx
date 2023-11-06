@@ -1,6 +1,6 @@
 import { Button, Input } from '@/common';
 import * as s from './style';
-import { useNavigateTo } from '@/hooks/useNavigate';
+import { useNavigateTo } from '@/hooks/useNavigateTo';
 import { useForm } from 'react-hook-form';
 import { onSubmitLogin } from '@/apis/loginApi';
 

@@ -1,7 +1,7 @@
 import { Avatar, Button } from '@/common';
 import * as s from './style';
 import { useCallback, useState } from 'react';
-import { useNavigateTo } from '@/hooks/useNavigate';
+import { useNavigateTo } from '@/hooks/useNavigateTo';
 const [userName, temperature, userImg] = [
   'John Doe',
   23,
