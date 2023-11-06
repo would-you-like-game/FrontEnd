@@ -1,20 +1,27 @@
 import * as s from './style';
 
 type chattingMessageProps = {
+  url: string;
   nickname: string;
   text: string;
+  isMe: boolean;
 };
 
-export const ChattingMessage = ({ nickname, text }: chattingMessageProps) => {
-  nickname = '구스조아';
-  text = '구스구스덕 신청하셨죠?';
+export const ChattingMessage = ({
+  url,
+  nickname,
+  text,
+  isMe,
+}: chattingMessageProps) => {
   return (
-    <s.ChattingMessage>
-      <div>
-        <img></img>
-        <div>{nickname}</div>
-      </div>
-      <div>{text}</div>
+    <s.ChattingMessage $isMe={isMe}>
+      {!isMe && (
+        <s.UserData>
+          <img src={url} alt="userImg" />
+          <div>{nickname}</div>
+        </s.UserData>
+      )}
+      <s.UserText>{text}</s.UserText>
     </s.ChattingMessage>
   );
 };
