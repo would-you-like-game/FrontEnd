@@ -4,9 +4,7 @@ import styled from '@emotion/styled';
 export const Edit = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  height: 85%;
-
+  height: 85vh;
   input {
     font-size: ${Theme.fontSizes.h2};
     font-weight: ${Theme.fontWeights.bold};
@@ -26,7 +24,6 @@ export const Edit = styled.form`
 `;
 
 export const Bottom = styled.div`
-  flex: 1;
   display: flex;
-  height: 100%;
+  flex: 1;
 `;

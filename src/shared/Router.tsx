@@ -52,6 +52,7 @@ export const Router = () => {
             <Route path="/" element={<Main />} />
             <Route path="/:category" element={<Main />} />
             <Route path="/mypage" element={<Mypage />} />
+            <Route path="/mypage/:category" element={<Mypage />} />
             <Route path="/chatting" element={<Chatting />}>
               <Route path="/chatting/:userId" element={<ChattingContent />} />
             </Route>

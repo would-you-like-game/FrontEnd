@@ -25,12 +25,12 @@ export type FontWeightsType = {
   normal: string;
 };
 
-export interface ThemeType {
+export type ThemeType = {
   colors: ColorsType;
   fontSizes: FontSizesType;
   fontWeights: FontWeightsType;
-}
+};
 
-export interface ContenetType {
+export type ContenetType = {
   page?: 'main';
-}
+};

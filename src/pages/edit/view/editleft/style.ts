@@ -14,6 +14,7 @@ export const EditLeft = styled.div`
     flex: 1;
     border: none;
     padding: 20px;
+    height: 100%;
     background-color: ${Theme.colors.gray1};
     &:focus {
       outline: none;
