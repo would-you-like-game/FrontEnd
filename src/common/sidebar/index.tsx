@@ -1,24 +1,30 @@
 import { Outlet } from 'react-router-dom';
 import * as s from './style';
 import { Button, SidebarItem } from '..';
-import { useCallback } from 'react';
-import { useSetRecoilState } from 'recoil';
+import { useCallback, useState, useEffect } from 'react';
 import { sidebarData } from '@/utils/sidebarData';
-import { sidebarState } from '@/recoil/sidebarState';
 import { useGetPathname, useNavigateTo } from '@/hooks';
-
+import { useSetRecoilState } from 'recoil';
+import { sidebarState } from '@/recoil/sidebarState';
 export const Sidebar = () => {
-  const pathname = useGetPathname();
   const navigateTo = useNavigateTo();
-  const post = sidebarData(pathname);
-  const setCategory = useSetRecoilState(sidebarState);
+  const pathname = useGetPathname();
+  const post = sidebarData(pathname[0]);
+  const setRecoilCategory = useSetRecoilState(sidebarState);
+  const [category, setCategory] = useState<string>(post[0].category);
+  useEffect(() => {
+    setRecoilCategory(category);
+  }, [category, setRecoilCategory]);
+
   const onClickCategoryHandler = useCallback(
     (category: string) => {
       setCategory(category);
-      if (pathname === 'chatting') navigateTo(`/chatting/${category}`);
-      else navigateTo(`/${category}?page=1`);
+      if (pathname[0] === 'chatting' || pathname[0] === 'myname')
+        return navigateTo(`/${pathname[0]}/${category}`);
+      console.log(category);
+      navigateTo(`/${category}`);
     },
-    [setCategory]
+    [setCategory, navigateTo, pathname]
   );
   const onClickEditButtonHanlder = useCallback(() => {
     const token = localStorage.getItem('token');
@@ -38,12 +44,12 @@ export const Sidebar = () => {
                 title={item.title}
                 type={item.type}
                 onClickHandler={() => onClickCategoryHandler(item.category)}
-                checked={pathname === item.category}
+                checked={category === item.category}
               />
             ))}
         </s.CategoryBox>
         <s.ButtonBox>
-          {!(pathname === 'chatting') && (
+          {!(pathname[1] === 'chatting') && (
             <Button onClick={onClickEditButtonHanlder}>게시글 작성</Button>
           )}
         </s.ButtonBox>
