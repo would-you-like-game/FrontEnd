@@ -6,7 +6,6 @@ export const onSubmitLogin = async (data) => {
     if (response.status === 200) {
       const token = response.data.token;
       localStorage.setItem('token', token);
-
       window.location.replace('/');
     }
   } catch (error) {
