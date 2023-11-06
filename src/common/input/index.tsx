@@ -1,9 +1,9 @@
 import * as s from './style';
 type inputProps = {
   type: string;
-  value?: string | number;
-  name?: string;
+  value: string | number;
   placeholder: string;
+  name?: string;
   children?: React.ReactNode;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   readOnly?: boolean;

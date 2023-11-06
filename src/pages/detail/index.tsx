@@ -6,9 +6,9 @@ import useSWR from 'swr';
 import { useGetPathname } from '@/hooks/useGetPathname';
 
 export const Detail = () => {
-  const postId = useGetPathname(1);
-  const { data: post } = useSWR(`post/${postId}`);
-  const { data: user } = useSWR(`user`);
+  const postId = useGetPathname();
+  console.log(postId[1]);
+  const { data: post } = useSWR(`post/${postId[1]}`);
   return (
     <s.Detail>
       {post && (
