@@ -3,6 +3,7 @@ import { creatPageArray } from '@/utils/creatPageArray';
 import { useRecoilState } from 'recoil';
 import { pageState } from '@/recoil/postState';
 import { useNavigateTo } from '@/hooks/useNavigateTo';
+
 type PaginationProps = {
   totalPages: number;
   category: string;
@@ -17,10 +18,14 @@ export const Pagination = ({ totalPages, category }: PaginationProps) => {
       {pageArray && (
         <>
           <s.Icon
-            onClick={() => {
-              navigateTo(`/${category}?page=1`);
-              setCurrentPage(1);
-            }}
+            onClick={
+              currentPage !== 1
+                ? () => {
+                    navigateTo(`/${category}?page=1`);
+                    setCurrentPage(1);
+                  }
+                : () => {}
+            }
             type="doubleLeft"
             size={20}
           />
