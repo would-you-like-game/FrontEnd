@@ -20,16 +20,23 @@ export type IconTypeProps = {
     | 'doubleRight'
     | 'cancel';
 };
-interface IconProps extends IconTypeProps {
+type IconProps = IconTypeProps & {
   className?: string;
   onClick?: () => void;
   color?: string;
-}
-interface IconsProps extends IconProps {
+};
+type IconsProps = IconProps & {
   size: number;
-}
+  disabled?: boolean;
+};
 
-export const Icons = ({ type, className, color, onClick }: IconsProps) => {
+export const Icons = ({
+  type,
+  className,
+  color,
+  disabled,
+  onClick,
+}: IconsProps) => {
   switch (type) {
     case 'human':
       return (
