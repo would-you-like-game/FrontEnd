@@ -21,6 +21,7 @@
     "react-hook-form": "^7.47.0",
     "react-router-dom": "^6.16.0",
     "recoil": "^0.7.7",
+    "sweetalert2": "^11.9.0",
     "swr": "^2.2.4",
     "use-hook-form": "^1.0.0",
     "vite-tsconfig-paths": "^4.2.1"

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-export const ChattingMiddle = styled.div`
+export const ChattingContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  justify-content: space-between;
   height: 100%;
-  padding: 50px 50px 30px 50px;
+  width: 100%;
 `;

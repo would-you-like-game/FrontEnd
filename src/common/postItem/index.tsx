@@ -1,4 +1,4 @@
-import { useNavigateTo } from '@/hooks/useNavigate';
+import { useNavigateTo } from '@/hooks/useNavigateTo';
 import * as s from './style';
 type PostItemStyle = {
   title: string;

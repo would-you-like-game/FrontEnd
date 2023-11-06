@@ -5,6 +5,7 @@ export type ColorsType = {
   gray3: string;
   black1: string;
   black2: string;
+  none: string;
 };
 
 export type FontSizesType = {
@@ -15,6 +16,7 @@ export type FontSizesType = {
   body3: string;
   body4: string;
   body5: string;
+  body6: string;
 };
 
 export type FontWeightsType = {
@@ -23,12 +25,12 @@ export type FontWeightsType = {
   normal: string;
 };
 
-export interface ThemeType {
+export type ThemeType = {
   colors: ColorsType;
   fontSizes: FontSizesType;
   fontWeights: FontWeightsType;
-}
+};
 
-export interface ContenetType {
+export type ContenetType = {
   page?: 'main';
-}
+};

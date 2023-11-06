@@ -1,7 +1,8 @@
 import * as s from './style';
 type inputProps = {
   type: string;
-  value?: string;
+  value?: string | number;
+  name?: string;
   placeholder: string;
   children?: React.ReactNode;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -13,6 +14,7 @@ export const Input = ({
   children,
   type,
   value,
+  name,
   onChange,
   placeholder,
   register,
@@ -24,6 +26,7 @@ export const Input = ({
       <s.Input
         type={type}
         value={value}
+        name={name}
         onChange={onChange}
         placeholder={placeholder}
         {...register}
