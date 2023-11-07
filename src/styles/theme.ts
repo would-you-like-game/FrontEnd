@@ -8,6 +8,7 @@ export const Theme: ThemeType = {
     gray3: '#6E6E6E',
     black1: '#272727',
     black2: '#151515',
+    none: 'none',
   },
   fontSizes: {
     h1: '48px',
