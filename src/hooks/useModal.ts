@@ -2,13 +2,13 @@ import { useState, useCallback } from 'react';
 
 interface ModalReturnProps {
   onModal: boolean;
-  onClickHandler: () => void;
+  onToggleModal: () => void;
 }
 
 export const useModal = (): ModalReturnProps => {
   const [onModal, SetOnModal] = useState(false);
-  const onClickHandler = useCallback(() => {
+  const onToggleModal = useCallback(() => {
     SetOnModal((prev) => !prev);
   }, [SetOnModal]);
-  return { onModal, onClickHandler };
+  return { onModal, onToggleModal };
 };

@@ -9,13 +9,13 @@ import { FormEvent } from 'react';
 
 export const Edit = () => {
   const [editData, onChange] = useRecoilInput(editDataState);
-  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSbumitPost(editData);
   };
 
   return (
-    <s.Edit onSubmit={(e) => onSubmitHandler(e)}>
+    <s.Edit onSubmit={(e) => handleSubmit(e)}>
       <ContentArea>
         <Input
           value={editData.title}

@@ -3,6 +3,7 @@ import { ColorsType } from '@/type/themeType';
 import { Theme } from '@/styles/theme';
 
 type ButtonProps = {
+  cursor?: 'pointer' | 'default';
   color: keyof ColorsType;
   borderColor: keyof ColorsType;
 };
@@ -26,5 +27,5 @@ export const Button = styled.button<ButtonProps>`
       : Theme.colors.gray2};
   font-size: ${Theme.fontSizes.body4};
   font-weight: ${Theme.fontWeights.semiBold};
-  cursor: ${(props) => (props.color !== 'none' ? 'point' : 'default')};
+  cursor: ${(props) => props.cursor};
 `;
