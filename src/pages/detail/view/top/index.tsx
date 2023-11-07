@@ -1,20 +1,25 @@
 import { Button } from '@/common';
 import * as s from './style';
+import { useNavigateTo } from '@/hooks';
+import { onDeletePost } from '@/apis/post/api';
+import useSWR from 'swr';
 
-export const Top = ({
-  title,
-  postUser,
-}: {
-  title: string;
-  postUser: boolean;
-}) => {
+export const Top = ({ postId }: { postId: number }) => {
+  const { data: post } = useSWR(`post/get/${postId}`);
+  const navigateTo = useNavigateTo();
+
   return (
     <s.Top>
-      <h2>{title}</h2>
-      {postUser && (
+      <h2>{post.title}</h2>
+      {post.postUser && (
         <s.UserButton>
-          <Button color="white">수정</Button>
-          <Button>삭제</Button>
+          <Button
+            onClick={() => navigateTo(`/edit?page=${postId}`)}
+            color="white"
+          >
+            수정
+          </Button>
+          <Button onClick={() => onDeletePost(postId)}>삭제</Button>
         </s.UserButton>
       )}
     </s.Top>

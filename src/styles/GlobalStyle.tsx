@@ -43,7 +43,9 @@ export const reset = css`
 `;
 
 export const ContentArea = styled.div<ContenetType>`
+  display: flex;
+  flex-direction: column;
   padding: 50px;
-  width: 100%;
   height: 100%;
+  width: 100%;
 `;

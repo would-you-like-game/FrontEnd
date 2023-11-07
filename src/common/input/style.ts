@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 export const InputContainer = styled.div`
   width: 100%;
-  margin-top: 35px;
+  padding-top: 35px;
 `;
 export const Label = styled.label`
   size: ${Theme.fontSizes.body5};

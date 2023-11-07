@@ -16,17 +16,16 @@ export const Sidebar = () => {
     setRecoilCategory(category);
   }, [category, setRecoilCategory]);
 
-  const onClickCategoryHandler = useCallback(
+  const handleCategoryClick = useCallback(
     (category: string) => {
       setCategory(category);
       if (pathname[0] === 'chatting' || pathname[0] === 'myname')
         return navigateTo(`/${pathname[0]}/${category}`);
-      console.log(category);
       navigateTo(`/${category}`);
     },
     [setCategory, navigateTo, pathname]
   );
-  const onClickEditButtonHanlder = useCallback(() => {
+  const hanlderEditButtonClick = useCallback(() => {
     const token = localStorage.getItem('token');
     if (token) {
       return navigateTo('/edit');
@@ -43,14 +42,14 @@ export const Sidebar = () => {
                 key={`${item.title}${index}`}
                 title={item.title}
                 type={item.type}
-                onClickHandler={() => onClickCategoryHandler(item.category)}
+                onClick={() => handleCategoryClick(item.category)}
                 checked={category === item.category}
               />
             ))}
         </s.CategoryBox>
         <s.ButtonBox>
           {!(pathname[1] === 'chatting') && (
-            <Button onClick={onClickEditButtonHanlder}>게시글 작성</Button>
+            <Button onClick={hanlderEditButtonClick}>게시글 작성</Button>
           )}
         </s.ButtonBox>
       </s.Sidebar>

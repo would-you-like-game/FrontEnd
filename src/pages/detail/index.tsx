@@ -2,29 +2,20 @@ import { ContentArea } from '@/styles/GlobalStyle';
 import * as s from './style';
 import { LeftBottom, Top } from './view';
 import RightBottom from './view/rightBottom';
-import useSWR from 'swr';
 import { useGetPathname } from '@/hooks/useGetPathname';
-
+import useSWR from 'swr';
 export const Detail = () => {
-  const postId = useGetPathname(1);
-  const { data: post } = useSWR(`post/${postId}`);
-  const { data: user } = useSWR(`user`);
+  const pathname = useGetPathname();
+  const postId = pathname[1];
+  const { data: post } = useSWR(`post/get/${postId}`);
   return (
     <s.Detail>
       {post && (
         <ContentArea>
-          <Top postUser={post.postUser} title={post.title} />
+          <Top postId={post.postId} />
           <s.Bottom>
-            <LeftBottom createdAt={'2023-입력-받어'} content={post.content} />
-            <RightBottom
-              postUser={post.postUser}
-              category={post.category}
-              number={post.totalNumber}
-              nickname={post.nickname}
-              profileImg={''}
-              userId={post.userId}
-              temperature={37}
-            />
+            <LeftBottom postId={post.postId} />
+            <RightBottom postId={post.postId} />
           </s.Bottom>
         </ContentArea>
       )}

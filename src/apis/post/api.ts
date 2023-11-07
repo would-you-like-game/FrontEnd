@@ -13,6 +13,25 @@ export const onSbumitPost = async (data: RequestPostType) => {
   }
 };
 
-/**만료 된 토큰을 실어서 보내면 200이 뜨고 데이터는 제대로 등록이 안되는 것 같다
- * 일단 response는 안 옴
- */
+export const onDeletePost = async (postId: number) => {
+  try {
+    const response = await api.delete(`post/${postId}`);
+    if (response.status === 200) {
+      window.location.replace('/');
+    }
+  } catch (error) {
+    console.error('error', error);
+  }
+};
+
+export const handleJoinGame = async (postId: number) => {
+  console.log('onJoinGame', postId);
+  // try {
+  //   const response = await api.post(`post/joinplayer/${postId}`);
+  //   if (response.status === 200) {
+  //     window.location.replace('/');
+  //   }
+  // } catch (error) {
+  //   console.error('error', error);
+  // }
+};
