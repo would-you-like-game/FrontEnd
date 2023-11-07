@@ -9,6 +9,7 @@ export const Detail = styled.div`
 
 export const Bottom = styled.div`
   display: flex;
+  width: 100%;
   height: 100%;
   gap: 50px;
 `;
