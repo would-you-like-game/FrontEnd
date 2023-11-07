@@ -2,21 +2,8 @@ import { Button, Modal, Portal } from '@/common';
 import * as s from './style';
 import { JoinUser, PostUser } from '../../components';
 import { useModal } from '@/hooks/useModal';
-type rightBottomProps = {
-  postUser: boolean;
-  category: string;
-  number: string;
-  nickname: string;
-  profileImg: string;
-  userId: number;
-  temperature: number;
-  participant?: {
-    nickname: string;
-    profileImg: string;
-    temperature: number;
-    userId: number;
-  }[];
-};
+import useSWR from 'swr';
+import { handleJoinGame } from '@/apis/post/api';
 const participant = [
   {
     nickname: '오리요리사',
@@ -40,34 +27,39 @@ const participant = [
     userId: 4,
   },
 ];
-const RightBottom = ({
-  postUser,
-  category,
-  number,
-  nickname,
-  profileImg,
-  userId,
-  temperature,
-}: rightBottomProps) => {
-  const { onModal, onClickHandler } = useModal();
+const RightBottom = ({ postId }: { postId: number }) => {
+  const { onModal, onToggleModal } = useModal();
+  const { data: post } = useSWR(`post/get/${postId}`);
+  const { totalNumber, category, postUser } = post;
+
+  const handleJoinUserClick = (postUser: boolean) => {
+    postUser ? onToggleModal() : handleJoinGame(postId);
+  };
   return (
     <s.RightBottom>
-      <PostUser
-        userId={userId}
-        profileImg={profileImg}
-        nickname={nickname}
-        temperature={temperature}
-      />
+      <PostUser postId={postId} />
       <s.GameOptions>
-        <Button color="white">인원수: {number}</Button>
+        <Button color="white">인원수: {totalNumber}</Button>
         <Button>게임종류: {category}</Button>
       </s.GameOptions>
       <s.JoinUserZone>
-        {postUser && <Button onClick={onClickHandler}>참가</Button>}
+        <s.JoinUser>
+          {participant.map((el) => (
+            <JoinUser
+              key={el.userId}
+              nickname={el.nickname}
+              profileImg={el.profileImg}
+              temperature={el.temperature}
+            />
+          ))}
+        </s.JoinUser>
+        <Button onClick={() => handleJoinUserClick(postUser)}>
+          {postUser ? '선택' : '참가'}
+        </Button>
       </s.JoinUserZone>
       {onModal && (
         <Portal nodeName="joinUserModal">
-          <Modal width={1000} heigth={1000} onClose={onClickHandler}>
+          <Modal width={1000} heigth={1000} onClose={onToggleModal}>
             <s.JoinUser>
               {participant.map((el) => (
                 <JoinUser

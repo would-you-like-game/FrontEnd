@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export const RightBottom = styled.div`
-  flex: 1;
   padding-top: 65px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 50%;
 `;
 
 export const GameOptions = styled.div`

@@ -1,7 +1,7 @@
 import * as s from './style';
 type inputProps = {
   type: string;
-  value: string | number;
+  value?: string | number;
   placeholder: string;
   name?: string;
   children?: React.ReactNode;
