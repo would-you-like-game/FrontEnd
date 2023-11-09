@@ -13,7 +13,7 @@ export const Login = styled.div`
   width: 600px;
 
   h1 {
-    margin-bottom: 45px;
+    margin-bottom: 60px;
     font-size: ${Theme.fontSizes.h1};
     font-weight: ${Theme.fontWeights.bold};
   }

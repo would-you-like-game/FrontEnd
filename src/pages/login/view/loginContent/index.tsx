@@ -17,14 +17,16 @@ const LoginContent = () => {
       >
         E-mail
       </Input>
-      <Input
-        type="password"
-        register={register('password', { required: true })}
-        placeholder="Enter your password"
-      >
-        Password
-      </Input>
-      <s.Text onClick={() => navigateTo('/signup')}>회원가입</s.Text>
+      <div>
+        <Input
+          type="password"
+          register={register('password', { required: true })}
+          placeholder="Enter your password"
+        >
+          Password
+        </Input>
+        <s.Text onClick={() => navigateTo('/signup')}>회원가입</s.Text>
+      </div>
       <Button color="black2" size="medium" type="submit">
         Login
       </Button>

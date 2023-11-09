@@ -5,6 +5,7 @@ export const SignupContent = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 40px;
 `;
 
 export const Validate = styled.div`
@@ -21,7 +22,7 @@ export const ValidateTexT = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-top: 75px;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
 `;
