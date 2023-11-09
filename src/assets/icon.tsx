@@ -30,13 +30,7 @@ type IconsProps = IconProps & {
   disabled?: boolean;
 };
 
-export const Icons = ({
-  type,
-  className,
-  color,
-  disabled,
-  onClick,
-}: IconsProps) => {
+export const Icons = ({ type, className, color, onClick }: IconsProps) => {
   switch (type) {
     case 'human':
       return (

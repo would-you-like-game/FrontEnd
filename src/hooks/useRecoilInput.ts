@@ -11,7 +11,7 @@ export const useRecoilInput = <T>(
 ] => {
   const [form, setForm] = useRecoilState<T>(initialState);
 
-  const onChangeHandler = useCallback(
+  const onChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       const { name, value } = event.target;
       if (name === 'totalNumber') {
@@ -30,7 +30,7 @@ export const useRecoilInput = <T>(
     },
     [form, setForm]
   );
-  return [form, onChangeHandler];
+  return [form, onChange];
 };
 
 /**
