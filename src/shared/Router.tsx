@@ -19,6 +19,12 @@ const Mypage = React.lazy(() =>
   import('../pages/mypage/index').then(({ Mypage }) => ({ default: Mypage }))
 );
 
+const Mypost = React.lazy(() =>
+  import('../pages/mypage/view/mypost/index').then(({ Mypost }) => ({
+    default: Mypost,
+  }))
+);
+
 const Chatting = React.lazy(() =>
   import('../pages/chatting/index').then(({ Chatting }) => ({
     default: Chatting,
@@ -51,10 +57,11 @@ export const Router = () => {
           <Route element={<Header />}>
             <Route path="/" element={<Main />} />
             <Route path="/:category" element={<Main />} />
-            <Route path="/mypage" element={<Mypage />} />
-            <Route path="/mypage/:category" element={<Mypage />} />
+            <Route path="/mypage" element={<Mypage />}>
+              <Route path=":category" element={<Mypost />} />
+            </Route>
             <Route path="/chatting" element={<Chatting />}>
-              <Route path="/chatting/:userId" element={<ChattingContent />} />
+              <Route path=":userId" element={<ChattingContent />} />
             </Route>
             <Route path="/detail/:postId" element={<Detail />} />
             <Route path="/edit" element={<Edit />} />

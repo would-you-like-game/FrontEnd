@@ -20,7 +20,7 @@ export const Sidebar = () => {
     (category: string) => {
       setCategory(category);
       if (pathname[0] === 'chatting' || pathname[0] === 'mypage')
-        return navigateTo(`/${pathname[0]}/${category}`);
+        return navigateTo(`/${pathname[0]}${category}`);
       navigateTo(`/${category}`);
     },
     [setCategory, navigateTo, pathname]
@@ -53,7 +53,6 @@ export const Sidebar = () => {
           )}
         </s.ButtonBox>
       </s.Sidebar>
-      <Outlet />
     </>
   );
 };
