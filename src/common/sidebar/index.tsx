@@ -19,9 +19,8 @@ export const Sidebar = () => {
   const onClickCategoryHandler = useCallback(
     (category: string) => {
       setCategory(category);
-      if (pathname[0] === 'chatting' || pathname[0] === 'myname')
+      if (pathname[0] === 'chatting' || pathname[0] === 'mypage')
         return navigateTo(`/${pathname[0]}/${category}`);
-      console.log(category);
       navigateTo(`/${category}`);
     },
     [setCategory, navigateTo, pathname]
