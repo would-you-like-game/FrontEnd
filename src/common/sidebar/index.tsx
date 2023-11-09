@@ -19,8 +19,8 @@ export const Sidebar = () => {
   const handleCategoryClick = useCallback(
     (category: string) => {
       setCategory(category);
-      if (pathname[0] === 'chatting' || pathname[0] === 'myname')
-        return navigateTo(`/${pathname[0]}/${category}`);
+      if (pathname[0] === 'chatting' || pathname[0] === 'mypage')
+        return navigateTo(`/${pathname[0]}${category}`);
       navigateTo(`/${category}`);
     },
     [setCategory, navigateTo, pathname]
@@ -53,7 +53,6 @@ export const Sidebar = () => {
           )}
         </s.ButtonBox>
       </s.Sidebar>
-      <Outlet />
     </>
   );
 };

@@ -17,8 +17,9 @@ type DataProps = IconTypeProps & {
 };
 
 const mypageData: DataProps[] = [
-  { category: 'mypost', title: '내가 쓴 게시물', type: 'emptyGame' },
-  { category: 'participate', title: '내가 참가한 게시물', type: 'filledGame' },
+  { category: '', title: '프로필', type: 'filledGame' },
+  { category: '/mypost', title: '내가 쓴 게시물', type: 'emptyGame' },
+  { category: '/participate', title: '내가 참가한 게시물', type: 'filledGame' },
 ];
 
 const chattingData: DataProps[] = [

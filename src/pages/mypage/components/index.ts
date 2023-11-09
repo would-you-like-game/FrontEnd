@@ -1,1 +1,2 @@
-export * from './postList';
+export * from './gradeGraph';
+export * from '../view/myProfile';
