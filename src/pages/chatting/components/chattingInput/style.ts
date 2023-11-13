@@ -8,4 +8,6 @@ export const ChattingInput = styled.textarea`
   padding: 15px;
   font-size: ${Theme.fontSizes.body5};
   overflow: hidden;
+  resize: none;
+  height: 50px;
 `;
