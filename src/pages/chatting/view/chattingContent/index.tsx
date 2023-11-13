@@ -11,7 +11,7 @@ export const ChattingContent = () => {
   const pathname = useGetPathname();
   const chatUserName = pathname[1];
   const roomKey = useGetRoomkey(chatUserName);
-  const stompRef = useRef<any>(null);
+  const stompRef = useRef<StompJs.Client>(null);
   const URL = import.meta.env.VITE_URL;
   const [msg, onChangeMsg, setMsg] = useInput<string>('');
   const [chat, setChat] = useState([]);
