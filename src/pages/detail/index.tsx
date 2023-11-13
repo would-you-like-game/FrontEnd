@@ -7,7 +7,7 @@ import useSWR from 'swr';
 export const Detail = () => {
   const pathname = useGetPathname();
   const postId = pathname[1];
-  const { data: post } = useSWR(`post/get/${postId}`);
+  const { data: post } = useSWR(`post/${postId}`);
   return (
     <s.Detail>
       {post && (

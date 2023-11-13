@@ -9,23 +9,29 @@ export const HeartIcon = styled(Hearts)`
 
 export const PostUser = styled.div`
   display: flex;
-  img {
-    width: 155px;
-    height: 165px;
-    border-radius: 50px;
-  }
+  flex-direction: column;
+  gap: 30px;
 `;
 
 export const UserData = styled.div`
   display: flex;
   gap: 20px;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  padding-left: 80px;
+  img {
+    width: 155px;
+    height: 165px;
+    border: 1px solid black;
+    border-radius: 50px;
+  }
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
   .nickname {
-    font-size: ${Theme.fontSizes.body3};
+    font-size: ${Theme.fontSizes.body2};
     font-weight: ${Theme.fontWeights.normal};
   }
 
@@ -34,4 +40,10 @@ export const UserData = styled.div`
     font-weight: ${Theme.fontWeights.normal};
     color: ${Theme.colors.gray2};
   }
+`;
+
+export const UserState = styled.div`
+  display: flex;
+  width: 100%;
+  height: 200px;
 `;
