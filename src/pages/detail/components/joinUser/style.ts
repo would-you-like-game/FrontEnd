@@ -9,9 +9,9 @@ export const HeartIcon = styled(Hearts)`
 export const JoinUser = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  padding: 0 20px;
   cursor: pointer;
-
+  gap: 10px;
   img {
     width: 85px;
     height: 75px;
@@ -23,7 +23,15 @@ export const JoinUser = styled.div`
 export const UserData = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  #nickname {
+    height: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85px;
+    padding-top: 1px;
+  }
 `;

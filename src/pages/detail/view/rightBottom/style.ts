@@ -19,10 +19,4 @@ export const JoinUserZone = styled.div`
   align-items: end;
 `;
 
-export const JoinUser = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-`;
+export const JoinUser = styled.div``;
