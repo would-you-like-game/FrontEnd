@@ -1,3 +1,4 @@
+import { sweetAlert } from '@/utils/sweetAlert2';
 import { api } from './api';
 
 export const onSubmitLogin = async (data) => {
@@ -9,6 +10,8 @@ export const onSubmitLogin = async (data) => {
       window.location.replace('/');
     }
   } catch (error) {
-    console.error('error', error);
+    if (error.response.status === 401) {
+      sweetAlert('login');
+    }
   }
 };
