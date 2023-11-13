@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router-dom';
 import * as s from './style';
 import { Button, SidebarItem } from '..';
 import { useCallback, useState, useEffect } from 'react';
@@ -20,7 +19,7 @@ export const Sidebar = () => {
     (category: string) => {
       setCategory(category);
       if (pathname[0] === 'chatting' || pathname[0] === 'mypage')
-        return navigateTo(`/${pathname[0]}${category}`);
+        return navigateTo(`/${pathname[0]}/${category}`);
       navigateTo(`/${category}`);
     },
     [setCategory, navigateTo, pathname]
@@ -48,7 +47,7 @@ export const Sidebar = () => {
             ))}
         </s.CategoryBox>
         <s.ButtonBox>
-          {!(pathname[1] === 'chatting') && (
+          {!(pathname[0] === 'chatting') && (
             <Button onClick={hanlderEditButtonClick}>게시글 작성</Button>
           )}
         </s.ButtonBox>

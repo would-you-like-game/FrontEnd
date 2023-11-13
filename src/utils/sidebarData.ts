@@ -1,6 +1,8 @@
 import { IconTypeProps } from '@/assets/icon';
+import useSWR from 'swr';
 
 export const sidebarData = (data: string) => {
+  // const chattingData = ChattingData(); //비동기 오류 잡아야할듯
   switch (data) {
     case 'mypage':
       return mypageData;
@@ -24,11 +26,13 @@ const mypageData: DataProps[] = [
 
 const chattingData: DataProps[] = [
   { category: 'user1', title: 'user1', type: 'emptyGame' },
-  { category: 'user2', title: 'user2 ', type: 'emptyGame' },
-  { category: 'user3', title: 'user3', type: 'emptyGame' },
-  { category: 'user4', title: 'user4', type: 'filledGame' },
+  { category: 'user2', title: 'user2 ', type: 'filledGame' },
 ];
-// 이거 채팅은 좀 달랐던거 같은데 어떻게 했더라???
+
+const ChattingData = () => {
+  const { data: chattingData } = useSWR(`/chatroom?page=1&size=10`);
+  console.log('CD_DATA', chattingData);
+};
 
 const mainData: DataProps[] = [
   { category: 'all', title: '전체', type: 'emptyGame' },
