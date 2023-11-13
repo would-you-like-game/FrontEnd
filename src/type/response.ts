@@ -30,3 +30,48 @@ type UserStateTpye = {
   totalSociability: number;
   totalRating: number;
 };
+
+export type Player = {
+  joinPlayerId: number;
+  nickname: string;
+  email: string;
+  crewOwnerEmail: string;
+  postUser: boolean;
+  accepted: boolean;
+};
+
+export type ResponseChatRoomType = {
+  msg: string;
+  pageable: Pageable;
+  result: ChatRoom[];
+};
+
+type Pageable = {
+  totalPages: number;
+  totalElements: number;
+  size: number;
+};
+
+type ChatRoom = {
+  roomKey: string;
+  nickname: string;
+  userImg: string | null;
+  modifiedAt: string;
+};
+
+export type UserProfile = {
+  userImg: string | null;
+  nickname: string;
+  email: string;
+  result: UserRating;
+  numberOfEvaluations: number;
+};
+
+type UserRating = {
+  totalManner: number;
+  totalParticipation: number;
+  totalGamingSkill: number;
+  totalEnjoyable: number;
+  totalSociability: number;
+  totalRating: number;
+};

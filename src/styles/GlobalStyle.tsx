@@ -24,7 +24,8 @@ export const reset = css`
     font-family: 'Orbitron', sans-serif;
   }
   #root {
-    height: 100%;
+    width: 100%;
+    height: 100vh;
   }
   body,
   html {

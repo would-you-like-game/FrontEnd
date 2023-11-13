@@ -1,19 +1,15 @@
 // 이부분 swr get 요청으로 바꾸자 profile 불러오는 부분임
-import { useCallback } from 'react';
 import useSWR from 'swr';
 import { useNavigateTo } from '@/hooks';
 import { ResponseUserProfileType } from '@/type/response';
 import * as s from './style';
 import { Avatar, Button } from '@/common';
+import { sweetAlert } from '@/utils/sweetAlert2';
 
 export const Right = () => {
   const navigateTo = useNavigateTo();
   const token = localStorage.getItem('token');
   const { data: user } = useSWR<ResponseUserProfileType>(token ? `user` : null);
-  const deleteToken = useCallback(() => {
-    localStorage.removeItem('token');
-    window.location.reload();
-  }, []);
 
   return (
     <s.RightSide>
@@ -22,7 +18,7 @@ export const Right = () => {
           <s.UserData>
             <Avatar size="medium" src={user.userImg} />
             <div className="nickname">{user.nickname}</div>
-            <div className="temp">&nbsp;{23}</div>
+            <div className="temp">&nbsp;{user.result.totalRating}</div>
           </s.UserData>
           <s.LoginOption>
             <Button
@@ -32,7 +28,11 @@ export const Right = () => {
             >
               Mypage
             </Button>
-            <Button onClick={deleteToken} color="black1" borderColor="white">
+            <Button
+              onClick={() => sweetAlert('logout')}
+              color="black1"
+              borderColor="white"
+            >
               Logout
             </Button>
           </s.LoginOption>
