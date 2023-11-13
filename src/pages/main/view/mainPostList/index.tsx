@@ -10,7 +10,7 @@ export const MainPostList = () => {
   const page = useRecoilValue(pageState);
   const category = useRecoilValue(sidebarState);
   const { data: posts, isLoading } = useSWR<ResponseTotalPostType>(
-    category ? `/post/category?page=${page}&category=${category}&size=3` : null
+    category ? `/post/category?page=${page}&category=${category}&size=10` : null
   );
   if (isLoading) {
     return <div>자는중임</div>;
@@ -25,7 +25,6 @@ export const MainPostList = () => {
               key={post.postId}
               currnetNubmer={1}
               totalNubmer={post.totalNumber}
-              temperature={20}
               nickname={post.nickname}
               title={post.title}
               postId={post.postId}

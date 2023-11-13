@@ -56,6 +56,7 @@ export const GradeGraph = ({
         maxValue={10}
         colors={Theme.colors.gray3}
         fillOpacity={0.1}
+        isInteractive={false}
       />
     </s.GradeGraph>
   );

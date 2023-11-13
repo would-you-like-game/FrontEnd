@@ -4,7 +4,6 @@ type PostItemStyle = {
   title: string;
   nickname: string;
   postId?: number;
-  temperature: number;
   currnetNubmer: number;
   totalNubmer: number;
 };
@@ -13,7 +12,6 @@ export const PostItem = ({
   title,
   nickname,
   postId,
-  temperature,
   totalNubmer,
   currnetNubmer,
 }: PostItemStyle) => {
@@ -26,7 +24,6 @@ export const PostItem = ({
         <span>{nickname}</span>
         <p>{title}</p>
         <div>
-          <span>{temperature}</span>
           <span>{`${currnetNubmer}/${totalNubmer} `}</span>
         </div>
       </s.Content>
