@@ -11,7 +11,7 @@ export const ChattingContent = () => {
   const pathname = useGetPathname();
   const chatUserName = pathname[1];
   const roomKey = useGetRoomkey(chatUserName);
-  const stompRef = useRef<any>(null);
+  const stompRef = useRef<StompJs.Client>(null);
   const URL = import.meta.env.VITE_URL;
   const [msg, onChangeMsg, setMsg] = useInput<string>('');
   const [chat, setChat] = useState([]);
@@ -28,10 +28,14 @@ export const ChattingContent = () => {
         console.log('Connect succeeded');
         stompRef.current = stomp;
 
-        stomp.subscribe(`/sub/${roomKey}`, ({ body }) => {
-          console.log(JSON.parse(body));
-          setChat((preChat) => [...preChat, JSON.parse(body)]);
-        });
+        stomp.subscribe(
+          `/sub/${roomKey}`,
+          ({ body }) => {
+            console.log(JSON.parse(body));
+            setChat((preChat) => [...preChat, JSON.parse(body)]);
+          },
+          { id: roomKey }
+        );
         onSendMsg(`${userData.nickname}님이 입장하셨습니다.`);
       },
       (error) => {
@@ -45,9 +49,15 @@ export const ChattingContent = () => {
       connect();
     }
     return () => {
-      userData && onSendMsg(`${userData.nickname} : 님이 나가셨습니다.`);
+      if (stompRef.current) {
+        stompRef.current.unsubscribe(roomKey);
+        stompRef.current.disconnect(() => {
+          userData && onSendMsg(`${userData.nickname} : 님이 나가셨습니다.`);
+          setChat([]);
+        });
+      }
     };
-  }, [userData]);
+  }, [userData, roomKey]);
 
   const onSendMsg = (msg: string) => {
     if (stompRef.current) {
@@ -65,10 +75,9 @@ export const ChattingContent = () => {
   };
 
   const onKeyDownMsg = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      if (!e.shiftKey) {
-        onSendMsg(msg);
-      }
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      onSendMsg(msg);
     }
   };
 
@@ -77,6 +86,7 @@ export const ChattingContent = () => {
       {userData && <ChattingMiddle chat={chat} nickname={userData.nickname} />}
       <ChattingBottom
         msg={msg}
+        setMsg={setMsg}
         onChangeMsg={onChangeMsg}
         onKeyDown={onKeyDownMsg}
         onSendMsg={onSendMsg}
