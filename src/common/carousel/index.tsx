@@ -13,6 +13,7 @@ export const Carousel = ({ itemList }) => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentX}00%)`;
     setWidth(listRef.current.offsetWidth / (page + 1));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentX]);
   const handleClickNextSlide = () => {
     if (currentX >= page) {

@@ -20,7 +20,6 @@ export const ChattingContent = () => {
   const connect = () => {
     const socket = new SockJS(`${URL}/chat`);
     const stomp = StompJs.over(socket);
-
     stomp.connect(
       {},
       () => {
@@ -61,6 +60,7 @@ export const ChattingContent = () => {
 
   const onSendMsg = (msg: string) => {
     if (stompRef.current) {
+      console.log(roomKey, userData.nickname);
       stompRef.current.send(
         '/pub/send/message',
         {},

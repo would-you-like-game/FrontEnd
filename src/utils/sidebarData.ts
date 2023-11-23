@@ -4,8 +4,7 @@ export const sidebarData = (data: string) => {
   switch (data) {
     case 'mypage':
       return mypageData;
-    case 'chatting':
-      return chattingData;
+
     default:
       return mainData;
   }
@@ -20,11 +19,6 @@ const mypageData: DataProps[] = [
   { category: '', title: '프로필', type: 'filledGame' },
   { category: 'mypost', title: '내가 쓴 게시물', type: 'emptyGame' },
   { category: 'participate', title: '내가 참가한 게시물', type: 'filledGame' },
-];
-
-const chattingData: DataProps[] = [
-  { category: 'user1', title: 'user1', type: 'emptyGame' },
-  { category: 'user2', title: 'user2 ', type: 'filledGame' },
 ];
 
 const mainData: DataProps[] = [

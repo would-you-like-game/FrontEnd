@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Header } from '@/common/header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { PublicRoute } from './PublicRoute';
 
 const Login = React.lazy(() =>
   import('../pages/login/index').then(({ Login }) => ({ default: Login }))
@@ -49,26 +50,39 @@ const NotFound = React.lazy(() =>
   }))
 );
 
+const PrivateRoute = React.lazy(() =>
+  import('./PrivateRoute').then(({ PrivateRoute }) => ({
+    default: PrivateRoute,
+  }))
+);
+
 export const Router = () => {
   return (
     <BrowserRouter>
       <Suspense>
         <Routes>
+          <Route element={<PublicRoute />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
           <Route element={<Header />}>
             <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main />} />
             <Route path="/:category" element={<Main />} />
-            <Route path="/mypage" element={<Mypage />}>
-              <Route path=":category" element={<Mypost />} />
-            </Route>
-            <Route path="/chatting" element={<Chatting />}>
-              <Route path=":userId" element={<ChattingContent />} />
-            </Route>
             <Route path="/detail/:postId" element={<Detail />} />
-            <Route path="/edit" element={<Edit />} />
           </Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="*" element={<NotFound />} />
+          <Route element={<PrivateRoute />}>
+            <Route element={<Header />}>
+              <Route path="/mypage" element={<Mypage />}>
+                <Route path=":category" element={<Mypost />} />
+              </Route>
+              <Route path="/edit" element={<Edit />} />
+              <Route path="/chatting" element={<Chatting />}>
+                <Route path=":userId" element={<ChattingContent />} />
+              </Route>
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </Suspense>
     </BrowserRouter>
