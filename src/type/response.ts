@@ -1,19 +1,20 @@
-export type TestPost = {
+interface Pageable {
+  totalPages: number;
+  totalElements: number;
+  size: number;
+}
+export interface Post {
   postId: number;
   title: string;
-  category: string;
-  content: string;
   totalNumber: number;
-  createdAt: string;
+  currentNumber: number;
   nickname: string;
-  id: number;
-  view: number;
-  owner: boolean;
-};
-
+  userImg: string | null;
+}
 export type ResponseTotalPostType = {
-  postList: TestPost[];
-  totalPages: number;
+  msg: string;
+  pageable: Pageable;
+  result: Post[];
 };
 
 export type ResponseUserProfileType = {
@@ -44,12 +45,6 @@ export type ResponseChatRoomType = {
   msg: string;
   pageable: Pageable;
   result: ChatRoom[];
-};
-
-type Pageable = {
-  totalPages: number;
-  totalElements: number;
-  size: number;
 };
 
 type ChatRoom = {
