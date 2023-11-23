@@ -26,11 +26,7 @@ export const reset = css`
   #root {
     width: 100%;
     height: 100vh;
-  }
-  body,
-  html {
     font-family: 'GmarketSansMedium';
-    height: 100%;
     width: 1280px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -40,6 +36,9 @@ export const reset = css`
     button {
       font-family: 'GmarketSansMedium';
     }
+  }
+  body,
+  html {
   }
 `;
 
