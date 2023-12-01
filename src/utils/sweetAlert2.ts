@@ -21,7 +21,9 @@ export const sweetAlert = (
         confirmButtonText: 'Login',
       });
     case 'login':
-      return Swal.fire('잘못된 비밀번호입니다');
+      return Swal.fire({
+        title: '잘못된 비밀번호입니다',
+      });
     case 'joinGame':
       return Swal.fire('참가신청 완료.');
   }

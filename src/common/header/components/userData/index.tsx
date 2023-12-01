@@ -1,5 +1,4 @@
 import * as s from './style';
-import fallbackImg from '@/assets/fallbackImg.jpg';
 import { Avatar } from '@/common';
 import { ResponseUserProfileType } from '@/type/response';
 import useSWR from 'swr';
@@ -12,7 +11,7 @@ export const UserData = () => {
     <s.UserData>
       {user && (
         <>
-          <Avatar size="medium" src={user.userImg ?? fallbackImg} />
+          <Avatar size="medium" src={user.userImg} />
           <div className="nickname">{user.nickname}</div>
           <div className="temp">&nbsp;{user.result.totalRating}</div>
         </>

@@ -5,7 +5,9 @@ import { sweetAlert } from '@/utils/sweetAlert2';
 // 에러코드를 받아야함 500일때랑 data 잘못됬을 떄만 받으면 되겠는데
 export const onSbumitPost = async (data: RequestPostType) => {
   try {
-    const response = await api.post('post', data);
+    const response = await api.post('post', data, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
     if (response.status === 200) {
       window.history.back();
     }
