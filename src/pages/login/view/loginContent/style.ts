@@ -3,10 +3,13 @@ import styled from '@emotion/styled';
 
 export const LoginContent = styled.form`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 
   button {
     margin: auto;
-    margin-top: 75px;
+    margin-top: 30px;
   }
 `;
 

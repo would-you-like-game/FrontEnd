@@ -6,7 +6,7 @@ export const JoinUser = ({ profileImg, nickname, temperature }: userProps) => {
     <s.JoinUser>
       <img src={profileImg} alt="profile Img" />
       <s.UserData>
-        <div>{nickname}</div>
+        <div id="nickname">{nickname}</div>
         <div>
           <s.HeartIcon color="red" />
           &nbsp;{temperature}

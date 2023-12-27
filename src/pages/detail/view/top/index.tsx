@@ -5,7 +5,7 @@ import { onDeletePost } from '@/apis/post/api';
 import useSWR from 'swr';
 
 export const Top = ({ postId }: { postId: number }) => {
-  const { data: post } = useSWR(`post/get/${postId}`);
+  const { data: post } = useSWR(`post/${postId}`);
   const navigateTo = useNavigateTo();
 
   return (

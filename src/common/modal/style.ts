@@ -16,6 +16,7 @@ export const Modal = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  z-index: 100;
 `;
 export const Outside = styled.div`
   position: absolute;

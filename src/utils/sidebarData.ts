@@ -4,8 +4,7 @@ export const sidebarData = (data: string) => {
   switch (data) {
     case 'mypage':
       return mypageData;
-    case 'chatting':
-      return chattingData;
+
     default:
       return mainData;
   }
@@ -17,17 +16,10 @@ type DataProps = IconTypeProps & {
 };
 
 const mypageData: DataProps[] = [
+  { category: '', title: '프로필', type: 'filledGame' },
   { category: 'mypost', title: '내가 쓴 게시물', type: 'emptyGame' },
   { category: 'participate', title: '내가 참가한 게시물', type: 'filledGame' },
 ];
-
-const chattingData: DataProps[] = [
-  { category: 'user1', title: 'user1', type: 'emptyGame' },
-  { category: 'user2', title: 'user2 ', type: 'emptyGame' },
-  { category: 'user3', title: 'user3', type: 'emptyGame' },
-  { category: 'user4', title: 'user4', type: 'filledGame' },
-];
-// 이거 채팅은 좀 달랐던거 같은데 어떻게 했더라???
 
 const mainData: DataProps[] = [
   { category: 'all', title: '전체', type: 'emptyGame' },

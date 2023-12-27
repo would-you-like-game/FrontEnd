@@ -2,7 +2,7 @@ import * as s from './style';
 import useSWR from 'swr';
 
 export const LeftBottom = ({ postId }: { postId: number }) => {
-  const { data: post } = useSWR(`post/get/${postId}`);
+  const { data: post } = useSWR(`post/${postId}`);
 
   return (
     <s.LeftBottom>

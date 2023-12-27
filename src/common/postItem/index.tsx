@@ -1,33 +1,26 @@
 import { useNavigateTo } from '@/hooks/useNavigateTo';
+import fallbackImg from '@/assets/fallbackImg.jpg';
 import * as s from './style';
-type PostItemStyle = {
-  title: string;
-  nickname: string;
-  postId?: number;
-  temperature: number;
-  currnetNubmer: number;
-  totalNubmer: number;
-};
+import { Post } from '@/type/response';
 
 export const PostItem = ({
   title,
   nickname,
   postId,
-  temperature,
-  totalNubmer,
-  currnetNubmer,
-}: PostItemStyle) => {
+  currentNumber,
+  totalNumber,
+  userImg,
+}: Post) => {
   const navigateTo = useNavigateTo();
 
   return (
     <s.PostItem onClick={() => navigateTo(`/detail/${postId}`)}>
-      <img alt="post-item" />
+      <img src={userImg ?? fallbackImg} />
       <s.Content>
         <span>{nickname}</span>
         <p>{title}</p>
         <div>
-          <span>{temperature}</span>
-          <span>{`${currnetNubmer}/${totalNubmer} `}</span>
+          <span>{`모집 : ${currentNumber} /  ${totalNumber} `}</span>
         </div>
       </s.Content>
     </s.PostItem>

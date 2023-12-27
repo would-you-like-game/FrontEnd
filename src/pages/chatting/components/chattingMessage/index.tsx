@@ -3,14 +3,14 @@ import * as s from './style';
 type chattingMessageProps = {
   url: string;
   nickname: string;
-  text: string;
+  msg: string;
   isMe: boolean;
 };
 
 export const ChattingMessage = ({
   url,
   nickname,
-  text,
+  msg,
   isMe,
 }: chattingMessageProps) => {
   return (
@@ -21,7 +21,7 @@ export const ChattingMessage = ({
           <div>{nickname}</div>
         </s.UserData>
       )}
-      <s.UserText>{text}</s.UserText>
+      <s.UserText>{msg}</s.UserText>
     </s.ChattingMessage>
   );
 };

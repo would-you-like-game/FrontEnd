@@ -1,19 +1,20 @@
-export type TestPost = {
+interface Pageable {
+  totalPages: number;
+  totalElements: number;
+  size: number;
+}
+export interface Post {
   postId: number;
   title: string;
-  category: string;
-  content: string;
   totalNumber: number;
-  createdAt: string;
+  currentNumber: number;
   nickname: string;
-  id: number;
-  view: number;
-  owner: boolean;
-};
-
+  userImg: string | null;
+}
 export type ResponseTotalPostType = {
-  postList: TestPost[];
-  totalPages: number;
+  msg: string;
+  pageable: Pageable;
+  result: Post[];
 };
 
 export type ResponseUserProfileType = {
@@ -23,6 +24,45 @@ export type ResponseUserProfileType = {
   result: UserStateTpye | null; // result는 UserResult 타입을 참조합니다.
 };
 type UserStateTpye = {
+  totalManner: number;
+  totalParticipation: number;
+  totalGamingSkill: number;
+  totalEnjoyable: number;
+  totalSociability: number;
+  totalRating: number;
+};
+
+export type Player = {
+  joinPlayerId: number;
+  nickname: string;
+  email: string;
+  crewOwnerEmail: string;
+  postUser: boolean;
+  accepted: boolean;
+};
+
+export type ResponseChatRoomType = {
+  msg: string;
+  pageable: Pageable;
+  result: ChatRoom[];
+};
+
+type ChatRoom = {
+  roomKey: string;
+  nickname: string;
+  userImg: string | null;
+  modifiedAt: string;
+};
+
+export type UserProfile = {
+  userImg: string | null;
+  nickname: string;
+  email: string;
+  result: UserRating;
+  numberOfEvaluations: number;
+};
+
+type UserRating = {
   totalManner: number;
   totalParticipation: number;
   totalGamingSkill: number;

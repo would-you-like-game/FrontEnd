@@ -9,8 +9,8 @@ import { pageState } from '@/recoil/postState';
 export const MainPostList = () => {
   const page = useRecoilValue(pageState);
   const category = useRecoilValue(sidebarState);
-  const { data: posts, isLoading } = useSWR<ResponseTotalPostType>(
-    category ? `/post/category?page=${page}&category=${category}&size=3` : null
+  const { data, isLoading } = useSWR<ResponseTotalPostType>(
+    category ? `/post?page=${page}&category=${category}&size=10` : null
   );
   if (isLoading) {
     return <div>자는중임</div>;
@@ -18,23 +18,27 @@ export const MainPostList = () => {
 
   return (
     <s.MainPostList>
-      <s.ItemBox>
-        {posts.postList &&
-          posts.postList.map((post) => (
-            <PostItem
-              key={post.postId}
-              currnetNubmer={1}
-              totalNubmer={post.totalNumber}
-              temperature={20}
-              nickname={post.nickname}
-              title={post.title}
-              postId={post.postId}
-            />
-          ))}
-      </s.ItemBox>
-      <Pagination totalPages={posts.totalPages} category={category} />
+      {data && (
+        <>
+          <s.ItemBox>
+            {data.result.map((post) => (
+              <PostItem
+                key={post.postId}
+                currentNumber={post.currentNumber}
+                totalNumber={post.totalNumber}
+                nickname={post.nickname}
+                title={post.title}
+                postId={post.postId}
+                userImg={post.userImg}
+              />
+            ))}
+          </s.ItemBox>
+          <Pagination
+            totalPages={data.pageable.totalPages}
+            category={category}
+          />
+        </>
+      )}
     </s.MainPostList>
   );
 };
-
-// postList 비어있는 건 error 가 나는데 params요소에서 뭔가 에러가 나는 것 같음
