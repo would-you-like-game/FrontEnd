@@ -22,7 +22,10 @@ export const sweetAlert = (
       });
     case 'login':
       return Swal.fire({
-        title: '잘못된 비밀번호입니다',
+        icon: 'error',
+        title: '잘못된 로그인',
+        text: '아이디와 비밀번호가 옳바르지 않습니다',
+        confirmButtonText: '확인',
       });
     case 'joinGame':
       return Swal.fire('참가신청 완료.');
