@@ -15,3 +15,21 @@ export const handleNicknameCheck = async (nickname: string) => {
     return 409;
   }
 };
+
+export const onChangeUserImage = async (userImg: File) => {
+  console.log('onChangeUserImage api호출', userImg);
+  if (!userImg) return 400;
+  try {
+    const formData = new FormData();
+    formData.append('userImg', userImg);
+
+    const response = await api.put('user/image', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    if (response.status === 200) return 200;
+  } catch (error) {
+    return 409;
+  }
+};
