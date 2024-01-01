@@ -1,6 +1,7 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import * as s from './style';
 import { Avatar } from '@/common';
+import { onChangeUserImage } from '@/apis/mypage/api';
 export const UploadButton = ({ userImg }: { userImg: string }) => {
   const [uploadImg, setUploadImg] = useState<File | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -13,6 +14,12 @@ export const UploadButton = ({ userImg }: { userImg: string }) => {
     },
     []
   );
+  useEffect(() => {
+    onChangeUserImage(uploadImg).then((result) => {
+      console.log(result);
+    });
+  }, [uploadImg]);
+
   return (
     <div>
       {uploadImg ? (
