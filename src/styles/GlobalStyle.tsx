@@ -30,13 +30,16 @@ export const reset = css`
     width: 1280px;
     margin: 0 auto;
     box-sizing: border-box;
+
     input {
       font-family: 'GmarketSansMedium';
     }
+
     button {
       font-family: 'GmarketSansMedium';
     }
   }
+
   body,
   html {
   }

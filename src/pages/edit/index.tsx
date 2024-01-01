@@ -11,7 +11,14 @@ export const Edit = () => {
   const [editData, onChange] = useRecoilInput(editDataState);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSbumitPost(editData);
+    const formData = new FormData();
+    formData.append(
+      'post',
+      new Blob([JSON.stringify(editData)], { type: 'application/json' })
+    );
+
+    formData.append('photos', new Blob([]));
+    onSbumitPost(formData);
   };
 
   return (

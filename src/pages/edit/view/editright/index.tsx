@@ -18,6 +18,7 @@ export const EditRight = () => {
         />
         <Select />
       </s.GameOption>
+      <input type="file" />
       <Button>작성완료</Button>
     </s.EditRight>
   );

@@ -1,6 +1,11 @@
 export type RequestPostType = {
-  title: string;
-  category: string;
-  content: string;
-  totalNumber: number | '';
+  post: Post;
+  photos: File[];
 };
+
+interface Post {
+  title: string;
+  content: string;
+  totalNumber: number;
+  category: string;
+}

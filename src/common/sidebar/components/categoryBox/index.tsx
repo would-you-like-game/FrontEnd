@@ -11,7 +11,6 @@ import { sidebarState } from '@/recoil/sidebarState';
 export const CategoryBox = () => {
   const navigateTo = useNavigateTo();
   const pathname = useGetPathname();
-  console.log(pathname);
   const setRecoilCategory = useSetRecoilState(sidebarState);
   const post = sidebarData(pathname[0]);
   const [category, setCategory] = useState<string>(post[0].category);
