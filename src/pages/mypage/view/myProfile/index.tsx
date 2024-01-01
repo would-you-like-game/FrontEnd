@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import * as s from './style';
 import { Button, Input } from '@/common';
 import { useDebouncedCallback, useInput } from '@/hooks';
@@ -36,8 +36,7 @@ export const MyProfile = ({ userImg, email, nickname }: MyProfileProps) => {
 
   return (
     <s.MyProfile>
-      <img src={userImg} alt="profileImg" />
-      <UploadButton />
+      <UploadButton userImg={userImg} />
       <s.EmailNickname>
         <div>email: {email}</div>
         <s.Nickname>

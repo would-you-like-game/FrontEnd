@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 import * as s from './style';
 import { Avatar } from '@/common';
-export const UploadButton = () => {
+export const UploadButton = ({ userImg }: { userImg: string }) => {
   const [uploadImg, setUploadImg] = useState<File | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const onsetProfileHandler = useCallback(
@@ -15,8 +15,10 @@ export const UploadButton = () => {
   );
   return (
     <div>
-      {uploadImg && (
-        <Avatar src={URL.createObjectURL(uploadImg)} size="large" />
+      {uploadImg ? (
+        <Avatar src={URL.createObjectURL(uploadImg) ?? userImg} size="large" />
+      ) : (
+        <Avatar src={userImg} size="large" />
       )}
       <input
         type="file"
