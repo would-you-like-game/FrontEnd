@@ -156,6 +156,9 @@ if (name === 'totalNumber') {
 
 - 🔗 [관련 링크](https://www.notion.so/)
 
+<br>
+<br>
+
 ## 6. 아키텍쳐
 
 ![gamecrews (1) (1)](https://github.com/would-you-like-game/FrontEnd/assets/83047601/0fa0c162-8055-4d6e-b86f-dc70a695fc27)
