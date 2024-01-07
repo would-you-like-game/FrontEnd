@@ -28,7 +28,10 @@
 
 <img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"/> <img src="https://img.shields.io/badge/AmazonS3-FF9900?style=for-the-badge&logo=AmazonS3&logoColor=white"/> <img src="https://img.shields.io/badge/AmazonCloudFront-FF9900?style=for-the-badge&"/> <img src="https://img.shields.io/badge/recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white"/> <img src="https://img.shields.io/badge/emotion-FE5196?style=for-the-badge"/> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
 
-## 4. 멤버 및 역할
+<br>
+<br>
+
+# 4. 멤버 및 역할
 
 ### 😏 [강신범](https://github.com/kangsinbeom)
 
@@ -81,8 +84,9 @@
 - 선정 된 인원들과 채팅을 통해 세부 일정 및 게임에 대한 생각을 공유할 수 있습니다.
 
 <br>
+<br>
 
-## 5. 트러블 슈팅
+# 5. 트러블 슈팅
 
 ### ⛔️ 문제 1 : 서브 도메인 설정 및 SSL 발급
 
@@ -161,6 +165,6 @@ if (name === 'totalNumber') {
 <br>
 <br>
 
-## 6. 아키텍쳐
+# 6. 아키텍쳐
 
 ![gamecrews (1) (1)](https://github.com/would-you-like-game/FrontEnd/assets/83047601/0fa0c162-8055-4d6e-b86f-dc70a695fc27)
