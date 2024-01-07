@@ -126,6 +126,8 @@ export const ButtonWrapper = styled.button<ButtonWrapperProps>`
 
 - 🔗 [관련 링크](https://www.notion.so/Dymanic-styling-type-setting-c608d2d6e94f4277b44c5c31717b4248)
 
+<br>
+
 ### ⛔️ 문제 3 : recoil과 함께 사용하는 custom hook
 
 📝 **작성자 : 강신범**
