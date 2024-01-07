@@ -35,35 +35,39 @@
 
 ### 😏 [강신범](https://github.com/kangsinbeom)
 
-- _역할_
+**_역할_**
 
-  1. **UI 기능 구현**
+1. **UI 기능 구현**
 
-  - 디테일, 메인, 글작성 페이지 UI
-  - Router 설정
-  - 공통컴포넌트 (button, sidebar, carousel, header ...)
-  - custon hook을 통한 관심사 분리 및 가독성 증가 (useInput, usePagination ...)
+- 디테일, 메인, 글작성 페이지 UI
+- Router 설정
+- 공통컴포넌트 (button, sidebar, carousel, header ...)
+- custon hook을 통한 관심사 분리 및 가독성 증가 (useInput, usePagination ...)
 
-  2. **AWS S3 및 CloudFront를 활용한 서버 배포 (협업)**
+<br>
 
-  - 배포 및 CI/CD 설정
-  - 서브 도메인 설정 및 세팅
+2. **AWS S3 및 CloudFront를 활용한 서버 배포 (협업)**
+
+- 배포 및 CI/CD 설정
+- 서브 도메인 설정 및 세팅
 
 ### 😎 [이소현](https://github.com/HyeonE0103)
 
-- _역할_
+**_역할_**
 
-  1. **한일 1**
+1. **한일 1**
 
-  -
-  -
-  -
-  -
+-
+-
+-
+-
 
-  2. **한일 2**
+<br>
 
-  -
-  -
+2. **한일 2**
+
+-
+-
 
 ## 4. 주요 기능
 
