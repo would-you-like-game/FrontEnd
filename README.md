@@ -26,7 +26,7 @@
 
 # 3. 기술 스택
 
-<img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"/> <img src="https://img.shields.io/badge/AmazonS3-FF9900?style=for-the-badge&logo=AmazonS3&logoColor=white"/> <img src="https://img.shields.io/badge/AmazonCloudFront-FF9900?style=for-the-badge&"/> <img src="https://img.shields.io/badge/recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white"/> <img src="https://img.shields.io/badge/emotion-FE5196?style=for-the-badge"/> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+<img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"/> <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazons3&logoColor=efefee"/> <img src="https://img.shields.io/badge/AmazonCloudFront-FF9900?style=for-the-badge&"/> <img src="https://img.shields.io/badge/route53-E34F26?style=for-the-badge&logo=route53&logoColor=white"> ![SockJS](https://img.shields.io/badge/SockJS-FD5A00?style=for-the-badge&logo=socks&logoColor=white) ![stompjs](https://img.shields.io/badge/stompjs-2595ED?style=for-the-badge&logo=websocket&logoColor=white) <img src="https://img.shields.io/badge/recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white"/> <img src="https://img.shields.io/badge/emotion-FE5196?style=for-the-badge"/> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/> <img src="https://img.shields.io/badge/reactrouter-CA4245?style=for-the-badge&logo=reactrouter&logoColor=efefee"/> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/GitHub Actions-2088FF?style=for-the-badge&logo=GitHub Actions&logoColor=white">
 
 <br>
 <br>
@@ -55,19 +55,29 @@
 
 **_역할_**
 
-1. **한일 1**
+1. **로그인 및 회원가입 페이지 구현**
 
--
--
--
--
+- JWT과 로컬 스토리지를 활용한 유저 관리
+- react-hook-form을 활용한 폼 상태 관리 및 유효성 검사 수행
 
 <br>
 
-2. **한일 2**
+2. **채팅 페이지 구현**
 
--
--
+- socket과 stomp를 이용한 실시간 채팅 구현
+
+<br>
+
+3. **마이페이지 구현**
+
+- nivo 라이브러리를 이용한 유저 차트 구현
+
+<br>
+
+4. **AWS S3 및 CloudFront를 활용한 서버 배포 (협업)**
+
+- 배포 및 CI/CD 설정
+- 서브 도메인 설정 및 세팅
 
 ## 4. 주요 기능
 
@@ -167,8 +177,60 @@ if (name === 'totalNumber') {
 - 🔗 [관련 링크](https://www.notion.so/)
 
 <br>
+
+### ⛔️ 문제 4 : 실시간 채팅시 입장하셨습니다라는 시작글이 여러번 되는 문제
+
+📝 **작성자 : 이소현**
+
+- 내용 : 처음 구독을 할때 입장을 알리는 메세지를 보내는데 다른방에 갔다가 다시 기존 채팅방에 이동했을 경우 시작 메세지를 여러번 보내는 문제
+
+✅ **해결방안**
+
+- 이벤트를 끊지 않고 중복된 구독문제로 sueEffect의 클린업 부분에 해당 채팅방을 이동하여 채팅을 마칠 경우 구독을 끊고 연결도 끊도록 설정하고 상대 채팅유저에게 채팅방을 나갔음을 알리도록 변경함
+
+```
+  useEffect(() => {
+    if (userData) {
+      connect();
+    }
+    return () => {
+      if (stompRef.current) {
+        stompRef.current.unsubscribe(roomKey);
+        stompRef.current.disconnect(() => {
+          userData && onSendMsg(`${userData.nickname} : 님이 나가셨습니다.`);
+          setChat([]);
+        });
+      }
+    };
+  }, [userData, roomKey]);
+
+```
+
 <br>
 
-# 6. 아키텍쳐
+### ⛔️ 문제 5 : CloudFront 캐시 무효화
 
-![gamecrews (1) (1)](https://github.com/would-you-like-game/FrontEnd/assets/83047601/0fa0c162-8055-4d6e-b86f-dc70a695fc27)
+📝 **작성자 : 이소현**
+
+- 내용 : 캐쉬로 인해 S3에 새롭게 배포해도 24시간 뒤에 CloudFront가 적용됨
+
+✅ **해결방안**
+
+- 기존 GitHubAction에 코드를 추가하여 S3를 배포한 후 CloudFront 캐쉬를 무효화 하도록 함
+
+```
+  - name: Configure AWS credentials
+    uses: aws-actions/configure-aws-credentials@v4
+    with:
+      aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws-region: ${{ secrets.AWS_BUCKET_REGION }}
+
+  - name: S3 Deploy
+    run: aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --acl bucket-owner-full-control
+
+  - name: Invalidate CloudFront Cache
+    run: aws cloudfront create-invalidation --distribution-id ${{secrets.CLOUD_FRONT_ID}} --paths "/*"
+```
+
+- 🔗 [관련 링크](https://hyeon-e.tistory.com/220)
